@@ -84,36 +84,36 @@ Create a website for collecting and sharing recipes which is useful, enjoyable a
 
 **Project Objectives:**<br> 
 * To create a website with a simple and intuitive User Experience;
-* To add content that is relevant and helps create a better image of the restaurant;
-* To differentiate between client and staff member accounts;
-* To implement fully functional features that will ease the staff members' tasks and upgrade clients' experience with the restaurant services;
+* To add conent which is relevant and informative;
+* To differentiate between user accounts and an admin account for non-code literate business content management;
+* To implement fully functional features that will ease logged-in user's experience with the site and help them to integrate it's use into their lifestyle;
 * To make the website available and functional on every device.<br><br>
 
 ### Scope<hr>
 **Simple and intuitive User Experience**<br>
-* Ensure the navigation menu is visible and functional at every step;
-* Ensure every page has a suggestive name that fits its content;
+* Ensure the navigation menu is visible and functional at any stage of using the site;
+* Ensure every page has a relevant name which fits its content;
 * Ensure the users will get visual feedback when navigating through pages;
-* Create a design that matches the restaurant theme and does not confuse the users.
+* Ensure the users will get visual feedback when navigating through recipes collections;
+* Create a design which does not confuse users and matches a singluar brand image.
 
 **Relevant content**<br>
-* Add information about restaurant name, location and contact data;
-* Make a clear and beautiful designed presentation of the menu elements;
-* Create a section with the most ordered dishes;
-* Create a section with customer reviews for full transparency.
+* Recipes have clear instrustions, ingredients and descriptions;
+* Menu and cookbook navigations blocks are clear and well designed;
+* Create a scrollable page which shows all the recipes in the database;
+* Create a section beneath each recipe with customer reviews for full transparency.
 
 **Features for upgraded experience**<br>
-* Create a Booking feature that allows the users to see all the tables available for a specific date and time:
-* Create a Menu feature that displays all the menu information and gives the possibility for the user to mark his favourite dishes;
-* Create a Review feature that displays all the reviews added and gives the possibility for the user to add and edit his review;
-* Create a Profile page for the user to see his upcoming bookings and favourite meals;
-* Create a page for the staff member to manage all the bookings for all the users;
+* Create a favouriting system for prioritizing specific recipes in a cookbook;
+* Create a business profile option for professional chefs to sell their cookbooks on the plaform;
+* Create a search function which includes food genres to allow groupings and style searches;
+* Create a link with existing cupboard contents tracking apps so that ingredients needed lists can be generated with an awareness of what is already in the user's kitchen.
+* 
 
-**Different client and staff member Accounts**<br>
-* Permit the client to add/edit reviews and the staff member only the option to read them;
-* Give the client permission to mark favourite meals and remove the option for staff members;
-* Allow access to Profile page only for client type of users;
-* Allow access to Manage Bookings page only for staff members type of users;
+**Different client and admin Accounts**<br>
+* Admin accounts are able to block accounts for abusing the platform;
+* Admin accounts can delete database entries which do not meet basic format compliances;
+* Client accounts can create their own recipes, manage their own collections and create variant copies of other user recipes. They can also write reviews on any public recipes.
 
 **Responsiveness**<br>
 * Create a responsive design for desktop, tablet and mobile devices.<br><br>
