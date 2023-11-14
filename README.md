@@ -39,7 +39,7 @@
   - [Acknowledgements](#acknowledgements)
 
 ## Overview
-This project is designed and developed to help users create and manage their own recipe books for cooking at home. The users are given the option to create their own recipes, add recipes from other users cookbooks, and create variants of other recipes. Users can then forward a single recipe to a contact for the purposes of preparing that meal and purchasing ingredients. All these functionalities are available to any user with an account. <br>
+This project is designed and developed to help users create and manage their own recipe books for cooking at home. Think Pinterest for foodies. The users are given the option to create their own recipes, add recipes from other users cookbooks, and create variants of other users recipes. Users can then forward a single recipe to a contact for the purposes of preparing that meal and purchasing ingredients. All these functionalities are available to any user with an account. <br>
 The website was created for domestic users, but there is no reason that businesses wouldnt also use it. This is a working demonstration of this site model which has the potential to be scaled to a functioning business in it's own right. <br>
 **Menooh - cookbook building website** was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
 <br><br>
@@ -141,37 +141,37 @@ The Flowchart for my program was created using <b>LucidChart</b> and it visually
 
 ### Skeleton<hr>
 **Wireframes**<br>
-The wireframes for mobile and desktop were created with [Balsamiq](https://balsamiq.com/) tool and can be viewed [here](static/italianissimo/wireframes/wireframes.pdf)<br>
+The wireframes for mobile and desktop were created with [Balsamiq](https://balsamiq.com/) tool and can be viewed [here](static/wireframes/wireframes.pdf)<br>
 
 **Database**<br>
 The project uses the PostgreSQL relational database for storing the data.<br>
-There were created two diagrams to represent the relation between the tables, the initial one and the final one.
+Two diagrams were made to represent the relation between the tables, the initial one and the final one.
 The first one was created before the actual development of the website which led to some changes to the attributes and tables for finding the most relevant and useful ones to be kept.
 
 <details>
   <summary>Initial Schema</summary>
-<img src="static/italianissimo/media/initial_db.jpeg" ><br>
+<img src="static/media/initial_db.jpeg" ><br>
 </details>
 
 <details>
   <summary>Final Schema</summary>
-<img src="static/italianissimo/media/final_db.jpeg"><br>
+<img src="static/media/final_db.jpeg"><br>
 </details><br>
 
 ### Surface<hr>
 #### Color Scheme
 All the colours were selected with the eyedropper plugin from the website cover, to maintain chromatic harmony. <br>
 * The primary colour scheme was used for most of the text existent on the website, in either dark or bright colours for creating a good contrast.<br> 
-<img src="static/italianissimo/media/clr2.png" width="30%">
-<img src="static/italianissimo/media/clr3.png" width="30%">
-<img src="static/italianissimo/media/clr4.png" width="30%">
-<img src="static/italianissimo/media/clr1.png" width="30%"><br>
+<img src="static/media/clr2.png" width="30%">
+<img src="static/media/clr3.png" width="30%">
+<img src="static/media/clr4.png" width="30%">
+<img src="static/media/clr1.png" width="30%"><br>
 
 * The secondary colour scheme was used for buttons, warnings, errors or for highlighting important information.<br>
-<img src="static/italianissimo/media/clr5.png" width="30%">
-<img src="static/italianissimo/media/clr6.png" width="30%">
-<img src="static/italianissimo/media/clr7.png" width="30%">
-<img src="static/italianissimo/media/clr8.png" width="30%">
+<img src="static/media/clr5.png" width="30%">
+<img src="static/media/clr6.png" width="30%">
+<img src="static/media/clr7.png" width="30%">
+<img src="static/media/clr8.png" width="30%">
 
 #### Fonts
 * The fonts I used for this site were imported from [Google Fonts](https://fonts.google.com/):<br>
@@ -187,25 +187,25 @@ Multiple box shadows were used for the cover, buttons and images. They were insp
 Some animations were used for creating a dynamic and attractive design
 <details>
   <summary>View Moving arrows animation</summary>
-<img src="static/italianissimo/media/arrows-capture.gif"><br>
+<img src="static/media/arrows-capture.gif"><br>
 </details>
 <details>
   <summary>View Authentication links Pulse animation</summary>
-<img src="static/italianissimo/media/pulse-capture.gif"><br>
+<img src="static/media/pulse-capture.gif"><br>
 </details>
 
 * **Hover effects**<br>
 <details>
   <summary>View NavBar elements hover</summary>
-<img src="static/italianissimo/media/nav-capture.gif"><br>
+<img src="static/media/nav-capture.gif"><br>
 </details>
 <details>
   <summary>View Buttons hover</summary>
-<img src="static/italianissimo/media/delete-capture.gif"><br>
+<img src="static/media/delete-capture.gif"><br>
 </details>
 <details>
 <summary>View Footer elements hover</summary>
-<img src="static/italianissimo/media/footer-capture.gif"><br>
+<img src="static/media/footer-capture.gif"><br>
 </details><br>
 
 ## Agile Methodology
@@ -221,42 +221,42 @@ All epics and user stories implementation progress was registered using [Trello]
     -Create a navigation menu<br>
     -Add restaurant name, slogan and description<br>
     -Choose colors, fonts and decorative images <br><br>
-    <img src="static/italianissimo/media/sprint2.png"><br><br>
+    <img src="static/media/sprint2.png"><br><br>
 * **Sprint 3 - USER REGISTRATION/AUTENTHICATION**<br>
     -Implement the *Register* page using the django-allauth module<br>
     -Implement the *Login* page using django-allauth module<br>
     -Implement *Logout* modal using django-allauth module<br><br>
-    <img src="static/italianissimo/media/sprint3.png"><br><br>
+    <img src="static/media/sprint3.png"><br><br>
 * **Sprint 4 - BOOKING**<br>
     -Create *Booking* page<br>
     -Implement a feature to display available tables<br>
     -Implement booking form validation<br><br>
-    <img src="static/italianissimo/media/sprint4.png"><br><br>
+    <img src="static/media/sprint4.png"><br><br>
 * **Sprint 5 - USER PROFILE**<br>
     -Create user *Profile* page<br>
     -Implement *Upcoming bookings* section<br><br>
-    <img src="static/italianissimo/media/sprint5.png"><br><br>
+    <img src="static/media/sprint5.png"><br><br>
 * **Sprint 6 - STAFF MANAGE BOOKINGS**<br>
     -Create a *Manage Bookings* page to display all bookings for today<br>
     -Implement filtering by date form<br><br>
-    <img src="static/italianissimo/media/sprint6.png"><br><br>
+    <img src="static/media/sprint6.png"><br><br>
 * **Sprint 7 - REVIEWS**<br>
     -Create a *Reviews* page to display all reviews<br>
     -Implement form for adding and updating review<br>
     -Complete *Home* page and add *Top Reviews* section<br><br>
-    <img src="static/italianissimo/media/sprint7.png"><br><br>
+    <img src="static/media/sprint7.png"><br><br>
 * **Sprint 8 - MENU**<br>
     -Create a *Menu* page to display menu details<br>
     -Implement a feature for adding meals to favourites<br>
     -Complete the *Profile* page and add the *Favourite dishes* section<br>
     -Complete *Home* page and add *Most appreciated dishes* section<br><br>
-    <img src="static/italianissimo/media/sprint8.png"><br><br>
+    <img src="static/media/sprint8.png"><br><br>
 * **Sprint 9 - CONTACT**<br>
     -Create *Where to find us* page<br>
     -Add timetable<br>
     -Add location address and map<br>
     -Add contact details<br><br>
-    <img src="static/italianissimo/media/sprint9.png"><br><br>
+    <img src="static/media/sprint9.png"><br><br>
 * **Sprint 10 - TESTING**<br>
     -Create unit tests for Home App<br>
     -Create unit tests for Booking App<br>
@@ -275,53 +275,53 @@ Every user that is authenticated can access the *Bookings* page for making a res
     * For the current day the Start hour can't be less than the current hour;<br>
     * End Hour should be greater than Start hour;<br>
     * Start and End hours must be between 9:00 AM - 11:00;<br><br>
-<img src="static/italianissimo/media/booking1.png" width="60%"><br><br>
+<img src="static/media/booking1.png" width="60%"><br><br>
 
 * The next section appears only if the previous one is valid and it displays the tables existing in the restaurant in the colour that matches their availability status. The user can now choose a table from the dropdown, considering that it only contains the free tables. Also, there is a read-only input with a value that represents the number of seats for each selected table, as an informative element.<br> 
-<img src="static/italianissimo/media/booking2.png" width="40%"><br><br>
+<img src="static/media/booking2.png" width="40%"><br><br>
 
 * Another part of the form is displayed with the contact details to be filled in. A better alternative available for the users that are not staff members is to check the *Book it on my name* option. This means that the form will automatically register the authenticated user's name and email as contact details.<br>
-<img src="static/italianissimo/media/booking3.png" width="40%"><br><br>
+<img src="static/media/booking3.png" width="40%"><br><br>
 
 * The last section contains an overview of the booking. If the reservation is submitted, a success message will appear
-<img src="static/italianissimo/media/booking4.png" width="60%"><br><br>
-<img src="static/italianissimo/media/booking5.png" width="40%"><br><br>
+<img src="static/media/booking4.png" width="60%"><br><br>
+<img src="static/media/booking5.png" width="40%"><br><br>
 
 #### Reviews
 * On the *Reviews page* there is a list of all the reviews posted on the website and it is visible to all types of users. All the reviews have the same design and type of content. Important details are displayed such as *Name*, *Date and time*, *Stars rating* and the *Message* posted.<br>
-<img src="static/italianissimo/media/reviews1.png" width="60%"><br><br>
+<img src="static/media/reviews1.png" width="60%"><br><br>
 
 * When a user is authenticated and he never posted a review, a form is provided for leaving a message and a star rating.<br>
-<img src="static/italianissimo/media/reviews2.png" width="40%"><br><br>
+<img src="static/media/reviews2.png" width="40%"><br><br>
 
 * For authenticated users that already posted a review, the page displays the values of their review and the possibility to update it.<br>
 The form for editing the review already contains the corresponding message value and the star ratings in the initial state.<br>
-<img src="static/italianissimo/media/reviews3.png" width="40%"><br><br>
-<img src="static/italianissimo/media/reviews4.png" width="40%"><br><br>
+<img src="static/media/reviews3.png" width="40%"><br><br>
+<img src="static/media/reviews4.png" width="40%"><br><br>
 
 
 #### Menu 
 * On the *Menu* page there is a list with all the menu elements. Every item represents a meal with details such as *Name*, *Image*, *Price*, and Ingredients. The list design is simple and attractive.<br>
-<img src="static/italianissimo/media/menu1.png" width="70%"><br><br>
+<img src="static/media/menu1.png" width="70%"><br><br>
 
 * An interactive feature has been added that is only available for logged-in users that are not staff members. A user has the possibility to mark his favourite meals through a form that uses a heart icon as a button. The heart shape defines the state of the meal, which can be marked or unmarked as a favourite dish.<br>
-<img src="static/italianissimo/media/menu2.png" width="30%">
-<img src="static/italianissimo/media/menu3.png" width="30%"><br><br>
+<img src="static/media/menu2.png" width="30%">
+<img src="static/media/menu3.png" width="30%"><br><br>
 
 #### Profiles
 The users' accounts have been created using the **django allauth** module. This way, information about the current user can be accessed from the template and displayed for confirming that the authentication was successful.<br>
 Considering that the website is created for a restaurant, the profile of the user is created to display essential information such as name and email.<br>
-<img src="static/italianissimo/media/profile1.png"><br><br>
+<img src="static/media/profile1.png"><br><br>
 Also, the profile page contains two features that are created for giving the user a better experience with the website.<br><br>
 * One of the features is called **Your upcoming bookings** and is represented by a list of the bookings created by the currently authenticated user.<br>
 Every booking has a visual representation of a note with the details of the reservation written on it. <br>
-<img src="static/italianissimo/media/profile2.png"><br><br>
+<img src="static/media/profile2.png"><br><br>
 Also, for giving the user the ability to manage his bookings, every element in the list comes with a *Delete Booking* button.<br>
 The button triggers a modal for confirmation, that being a part of the defensive programming.<br>
-<img src="static/italianissimo/media/profile3.png"><br><br>
+<img src="static/media/profile3.png"><br><br>
 
 * Another user-friendly feature is **Your favourite dishes**. This feature displays to the user all the meals that he has added to *Favourites* from the *Menu* page. The menu items contain the meal image and name, as it was not considered necessary to display all the details from the menu.<br>
-<img src="static/italianissimo/media/profile4.png"><br><br>
+<img src="static/media/profile4.png"><br><br>
 
 #### Staff bookings management
 The staff account was created as a superuser account from the terminal and also has access to the admin panel.<br>
@@ -330,17 +330,17 @@ There is a page created especially for staff members to keep a better tracking o
 * A form is provided for filtering the bookings by date for a better user experience.<br>
 * A booking also has a delete button that triggers a confirmation modal. <br>
 
-<img src="static/italianissimo/media/staff1.png" width="80%"><br><br>
-<img src="static/italianissimo/media/staff2.png" width="50%"><br><br>
+<img src="static/media/staff1.png" width="80%"><br><br>
+<img src="static/media/staff2.png" width="50%"><br><br>
 
 * If the bookings list is empty, a suggestive message is displayed.<br>
-<img src="static/italianissimo/media/staff3.png" width="50%"><br><br>
+<img src="static/media/staff3.png" width="50%"><br><br>
 
 
 ### Future Feature Considerations<hr>
 * Updating the booking feature with a more complex algorithm and design for generating the available tables. The current algorithm sets a table as *busy* even if it is registered as booked only for a small part of the interval requested by the user for the reservation. Also, the Start and End time are restricted to accept only zero hundred hours. By changing the limit to even zero-thirty hours, the tables algorithm will be more efficient.
 
-* Another possible feature would be the implementation of a *Reward system*. Every time a client leaves a good review, a discount would appear on his profile page to use on his next visit. Also, a user should be given the status of *Loyal customer* when he registers on a system every time he eats at Italianissimo if that happens regularly. Different discounts should apply to loyal customers in order to recompensate and encourage their habit.  
+* Another possible feature would be the implementation of a *Reward system*. Every time a client leaves a good review, a discount would appear on his profile page to use on his next visit. Also, a user should be given the status of *Loyal customer* when he registers on a system every time he eats, if that happens regularly. Different discounts should apply to loyal customers in order to recompensate and encourage their habit.  
 
 ## Responsive Layout and Design
 The project design has been adapted to all types of devices using Bootstrap predefined breakpoints. For intermediate devices where the design didn't fit accordingly, custom breakpoints were used.
@@ -452,12 +452,12 @@ The testing documentation can be found at [TESTING.MD](TESTING.MD)
     
 ### Fork the repository
 For creating a copy of the repository on your account and change it without affecting the original project, use<b>Fork</b> directly from GitHub:
-- On [My Repository Page](https://github.com/useriasminna/italianissimo-booking-website), press <i>Fork</i> in the top right of the page
+- On [My Repository Page](https://github.com/useriasminna/website-booking-website), press <i>Fork</i> in the top right of the page
 - A forked version of my project will appear in your repository<br></br>
 
 ### Clone the repository
 For creating a clone of the repository on your local machine, use<b>Clone</b>:
-- On [My Repository Page](https://github.com/useriasminna/italianissimo-booking-website), click the <i>Code</i> green button, right above the code window
+- On [My Repository Page](https://github.com/useriasminna/website-booking-website), click the <i>Code</i> green button, right above the code window
 - Chose from <i>HTTPS, SSH and GitClub CLI</i> format and copy (preferably <i>HTTPS</i>)
 - In your <i>IDE</i> open <i>Git Bash</i>
 - Enter the command <code>git clone</code> followed by the copied URL
