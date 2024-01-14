@@ -4,6 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
-    return HttpResponse("Hello, Blog!")
-    
+def contact_us(request):
+    return HttpResponse("This will be the contact user-support form")
