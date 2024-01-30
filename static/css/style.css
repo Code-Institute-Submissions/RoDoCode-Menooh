@@ -191,9 +191,25 @@ body {
     background-color: transparent;
 }
 
-.card-img-top {
+.card-img-top-small {
     border-radius: 20px;
-    object-fit: scale-down;
+    object-fit: cover;
+    height: 170px;
+    width: 100%;
+}
+
+.card-img-top-medium {
+    border-radius: 20px;
+    object-fit: cover;
+    height: 240px;
+    width: 100%;
+}
+
+.card-img-top-large {
+    border-radius: 20px;
+    object-fit: cover;
+    height: 360px;
+    width: 100%;
 }
 
 .image-container {
@@ -210,6 +226,9 @@ body {
 
 .card-title {
     font-size: 1rem;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-text {

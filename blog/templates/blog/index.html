@@ -10,9 +10,9 @@
                 <div class="card-body">
                     <div class="image-container">
                         {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                        <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                         {% else %}
-                        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                        <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                         {% endif %}
                         <div class="image-flash">
                             <p class="author">Chef: {{ post.author }}</p>
@@ -22,8 +22,6 @@
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
-
-                    <hr />
                     <p class="card-text text-muted h6">{{ post.created_on}}
                     </p>
                 </div>
@@ -33,9 +31,9 @@
             <div class="card-body">
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                    <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                     {% else %}
-                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                    <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="author">Chef: {{ post.author }}</p>
@@ -45,8 +43,6 @@
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text">{{ post.excerpt }}</p>
                 </a>
-        
-                <hr />
                 <p class="card-text text-muted h6">{{ post.created_on}}
                 </p>
             </div>
@@ -56,9 +52,9 @@
             <div class="card-body">
                 <div class="image-container">
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                    <img class="card-img-top-large" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                     {% else %}
-                    <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                    <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
                         <p class="author">Chef: {{ post.author }}</p>
@@ -68,8 +64,6 @@
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text">{{ post.excerpt }}</p>
                 </a>
-        
-                <hr />
                 <p class="card-text text-muted h6">{{ post.created_on}}
                 </p>
             </div>
