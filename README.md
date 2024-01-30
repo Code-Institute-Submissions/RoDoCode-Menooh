@@ -141,7 +141,7 @@ The Flowchart for my program was created using <b>LucidChart</b> and it visually
 
 ### Skeleton<hr>
 **Wireframes**<br>
-The wireframes for mobile and desktop were created with [Balsamiq](https://balsamiq.com/) tool and can be viewed [here](static/wireframes/wireframes.pdf)<br>
+The wireframes for mobile and desktop were created with [Balsamiq](https://balsamiq.com/) tool and can be viewed [here](static/images/Wireframes.png)<br>
 
 **Database**<br>
 The project uses the PostgreSQL relational database for storing the data.<br>
