@@ -84,7 +84,7 @@ Create a website for collecting and sharing recipes which is useful, enjoyable a
 
 **Project Objectives:**<br> 
 * To create a website with a simple and intuitive User Experience;
-* To add conent which is relevant and informative;
+* To add content which is relevant and informative;
 * To differentiate between user accounts and an admin account for non-code literate business content management;
 * To implement fully functional features that will ease logged-in user's experience with the site and help them to integrate it's use into their lifestyle;
 * To make the website available and functional on every device.<br><br>
