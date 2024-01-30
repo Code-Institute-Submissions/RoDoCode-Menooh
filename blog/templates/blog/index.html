@@ -15,7 +15,7 @@
                         <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                         {% endif %}
                         <div class="image-flash">
-                            <p class="author">Author: {{ post.author }}</p>
+                            <p class="author">Chef: {{ post.author }}</p>
                         </div>
                     </div>
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
@@ -38,7 +38,7 @@
                     <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
-                        <p class="author">Author: {{ post.author }}</p>
+                        <p class="author">Chef: {{ post.author }}</p>
                     </div>
                 </div>
                 <a href="{% url 'post_detail' post.slug %}" class="post-link">
@@ -61,7 +61,7 @@
                     <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% endif %}
                     <div class="image-flash">
-                        <p class="author">Author: {{ post.author }}</p>
+                        <p class="author">Chef: {{ post.author }}</p>
                     </div>
                 </div>
                 <a href="{% url 'post_detail' post.slug %}" class="post-link">

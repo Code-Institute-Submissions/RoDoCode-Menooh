@@ -37,7 +37,8 @@ body {
 .author {
     color: white;
     margin: 4px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    font-size: calc(1rem - 0.1vw);
 }
 
 .masthead {
@@ -186,7 +187,7 @@ body {
     background-color: transparent; */
     padding: 0;
     margin: 15px 10px;
-    border-radius: var(--card_border_radius);
+    border: none !important;
     background-color: transparent;
 }
 
@@ -205,4 +206,19 @@ body {
     min-width: 30%;
     left: -2px;
     background-color: #188181;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: calc(1rem - 0.2vw);
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-body {
+    padding: 0.1rem;
 }
