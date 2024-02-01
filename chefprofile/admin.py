@@ -12,5 +12,4 @@ class ChefProfileAdmin(SummernoteModelAdmin):
     summernote_fields = ('bio',)
 
 
-# Register your models here.
-admin.site.register(ChefProfile)
+
