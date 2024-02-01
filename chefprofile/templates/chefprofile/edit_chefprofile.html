@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-4 text-center">
+            {% if "placeholder" in about.profile_image.url %}
+            <img src="{% static 'images/nobody.jpg' %}" width="75%" alt="placeholder image">
+            {% else %}
+            <img src="{{ chefprofile.profile_pic.url }}" width="75%" alt="{{ chefprofile.title }}">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-8">
+            <h2>{{ chefprofile.user }}</h2>
+            {{ chefprofile.bio | safe }}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 my-5">
+            <h2>You are a chef!</h2>
+            <p>Tell the other chef's a little about yourself! What kind of food do you like? Who do you think of when
+                you cook? What inspires your cooking?</p>
+
+            <!-- add your form here. Your submit button should 
+                                have the classes of btn, btn-secondary -->
+            <form method="post">
+                {{ ChefProfileForm | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
