@@ -8,21 +8,15 @@
             {% if "placeholder" in about.profile_image.url %}
             <img src="{% static 'images/nobody.jpg' %}" width="75%" alt="placeholder image">
             {% else %}
-            <img src="{{ chefsprofile.profile_pic.url }}" width="75%" alt="{{ about.title }}">
+            <img src="{{ chefprofile.profile_pic.url }}" width="75%" alt="{{ about.title }}">
             {% endif %}
         </div>
         <div class="col-8">
             <!-- Title goes between these h2 tags -->
-            <h2>{{ about.title }}</h2>
+            <h2>{{ chefprofile.user }}</h2>
+            <h3>{{ chefprofile.location | safe }}</h3>
             <!-- Content goes directly underneath this -->
-            {{ about.content | safe }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col text-right">
-            <!-- Updated on field goes in here -->
-
-            <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+            {{ chefprofile.bio | safe }}
         </div>
     </div>
 </div>
