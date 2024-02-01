@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import ChefProfile
+from .models import ChefsProfile
 from .forms import ChefProfileForm
 
 

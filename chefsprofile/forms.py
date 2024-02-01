@@ -1,8 +1,8 @@
 from django import forms
-from .models import ChefProfile
+from .models import ChefsProfile
 
 
 class ChefProfileForm(forms.ModelForm):
     class Meta:
-        model = ChefProfile
+        model = ChefsProfile
         fields = ['bio', 'location', 'birth_date', 'profile_pic']
