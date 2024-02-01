@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'about',
     'blog',
     'contact',
-    'chefsprofile',
 ]
 
 SITE_ID = 1

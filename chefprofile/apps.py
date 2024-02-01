@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ChefsprofileConfig(AppConfig):
+class ChefprofileConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'chefsprofile'
+    name = 'chefprofile'
