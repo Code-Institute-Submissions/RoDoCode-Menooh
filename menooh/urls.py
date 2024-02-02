@@ -23,10 +23,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('contact/', include("contact.urls"), name='contact'),
-    path('view_chefprofile/', include("chefprofile.urls"),
-         name='view_chefprofile'),
-    path('edit_chefprofile/', include("chefprofile.urls"),
-         name='edit_chefprofile'),
+    path('chefprofile/', include("chefprofile.urls"),
+         name='chefprofile'),
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
 
