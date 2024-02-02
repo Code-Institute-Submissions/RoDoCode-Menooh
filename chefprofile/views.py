@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import ChefProfile
 from .forms import ChefProfileForm
 
 
 def edit_chefprofile(request):
-    chefprofile = request.user.chefprofile
+    chefprofile = get_object_or_404(ChefProfile, user=request.user)
 
     if request.method == 'POST':
         form = ChefProfileForm(request.POST, instance=chefprofile)
@@ -18,4 +18,9 @@ def edit_chefprofile(request):
 
 
 def view_chefprofile(request):
-    return render(request, 'view_chefprofile.html')
+    print('IN VIEW')
+    print('USER: ', request.user)
+    chefprofile = get_object_or_404(ChefProfile, user=request.user)
+    print('PROFILE', chefprofile)
+    context = {'chefprofile': chefprofile, }
+    return render(request, 'view_chefprofile.html', context)
