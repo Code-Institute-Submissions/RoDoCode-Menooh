@@ -4,8 +4,9 @@
 
 <div class="container mt-5">
     <div class="row">
+        {% if chefprofile in user.chefprofile %}
         <div class="col-4 text-center">
-            {% if "placeholder" in about.profile_image.url %}
+            {% if "placeholder" in chefprofile.profile_pic.url %}
             <img src="{% static 'images/nobody.jpg' %}" width="75%" alt="placeholder image">
             {% else %}
             <img src="{{ chefprofile.profile_pic.url }}" width="75%" alt="{{ about.title }}">
@@ -18,6 +19,16 @@
             <!-- Content goes directly underneath this -->
             {{ chefprofile.bio | safe }}
         </div>
+        {% else %}
+        <div class="col-4 text-center">
+            <img src="{% static 'images/nobody.jpg' %}" width="75%" alt="placeholder image">
+        </div>
+        <div class="col-8">
+            <h2>User Profile</h2>
+            <h3><a class="nav-link {% if request.path == edit_chefprofile_url %}active{%endif%}" aria-current="page"
+                href="{% url 'edit_chefprofile' %}"> Edit Profile</a></h3>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}
