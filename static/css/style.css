@@ -253,3 +253,9 @@ body {
 #prof-pic {
     border-radius: 50%;
 }
+
+#message-alert-head {
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom:0;
+}
