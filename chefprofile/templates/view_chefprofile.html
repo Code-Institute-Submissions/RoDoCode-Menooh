@@ -1,34 +1,44 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-4 text-center mx-auto">
-            {% if "placeholder" in chefprofile.profile_pic.url %}
-            <img id="prof-pic"
-            src="{% static 'images/nobody.jpg' %}"
-            width="75%"
-            alt="placeholder image"
-            />
-            {% else %}
-            <img id="prof-pic"
-            src="{{ chefprofile.profile_pic.url }}"
-            width="75%"
-            alt="profile_picture"
-            />
-            {% endif %}
-        </div>
+  <div class="row">
+    <div class="col-4 text-center mx-auto">
+      {% if "placeholder" in chefprofile.profile_pic.url %}
+      <img
+        id="prof-pic"
+        src="{% static 'images/nobody.jpg' %}"
+        width="75%"
+        alt="placeholder image"
+      />
+      {% else %}
+      <img
+        id="prof-pic"
+        src="{{ chefprofile.profile_pic.url }}"
+        width="75%"
+        alt="profile_picture"
+      />
+      {% endif %}
     </div>
-    <div class="row">
-        <div class="col-8 mx-auto">
-            <!-- Title goes between these h2 tags -->
-            <h3 class="text-center"><i class="fa-solid fa-bowl-food"></i>{{ chefprofile.user }}</h3>
-            <h4 class="text-center">{{ chefprofile.location | safe }}</h4>
-            <!-- Content goes directly underneath this -->
-            <p class="text-center">{{ chefprofile.bio | safe }}</p>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <!-- Title goes between these h2 tags -->
+      <h3 class="text-center">
+        <i class="fa-solid fa-bowl-food"></i> {{ chefprofile.user }}
+      </h3>
+      <p class="text-center">
+        <strong>{{ chefprofile.location | safe }}</strong>
+      </p>
+      <!-- Content goes directly underneath this -->
+      <p class="text-center">{{ chefprofile.bio | safe }}</p>
     </div>
-    <div class="row">
-        <a class="mx-auto text-center" href="{% url 'edit_chefprofile' %}"><button type="button" class="btn btn-success btn-rounded"></button>Edit profile</button></a>
-    </div>
+  </div>
+  <div class="row">
+    <a class="mx-auto text-center" href="{% url 'edit_chefprofile' %}"
+      ><button type="button" class="btn btn-success btn-rounded">
+        Edit profile
+      </button></a
+    >
+  </div>
 </div>
 {% endblock content %}
