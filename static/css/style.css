@@ -249,3 +249,7 @@ body {
 .btn-rounded {
     border-radius: 19px;
 }
+
+#prof-pic {
+    border-radius: 50%;
+}
