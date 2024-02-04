@@ -3,7 +3,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-4 text-center mx-auto">
-      {% if "placeholder" in chefprofile.profile_pic.url %}
+      {% if "placeholder" in user.chefprofile.profile_pic.url %}
       <img
         id="prof-pic"
         src="{% static 'images/nobody.jpg' %}"
@@ -24,13 +24,13 @@
     <div class="col-8 mx-auto">
       <!-- Title goes between these h2 tags -->
       <h3 class="text-center">
-        <i class="fa-solid fa-bowl-food"></i> {{ chefprofile.user }}
+        <i class="fa-solid fa-bowl-food"></i> {{ user.username }}
       </h3>
       <p class="text-center">
-        <strong>{{ chefprofile.location | safe }}</strong>
+        <strong>{{ user.chefprofile.location | safe }}</strong>
       </p>
       <!-- Content goes directly underneath this -->
-      <p class="text-center">{{ chefprofile.bio | safe }}</p>
+      <p class="text-center">{{ user.chefprofile.bio | safe }}</p>
     </div>
   </div>
   <div class="row">
