@@ -241,3 +241,11 @@ body {
 .card-body {
     padding: 0.1rem;
 }
+
+#loginmessage {
+    margin-top: 1rem;
+}
+
+.btn-rounded {
+    border-radius: 19px;
+}
