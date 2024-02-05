@@ -1,10 +1,19 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=250)
+
+    def __unicode__(self):
+        return self.title
 
 
 class Post(models.Model):
@@ -15,10 +24,15 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
+    ingredients = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    reference_id = models.AutoField(
+        primary_key=True, default=1, editable=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, verbose_name='Cuisine_Category')
 
     class Meta:
         ordering = ["-created_on"]

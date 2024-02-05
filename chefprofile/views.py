@@ -13,7 +13,7 @@ def edit_chefprofile(request):
             return redirect('chefprofile')
     else:
         form = ChefProfileForm(instance=chefprofile)
-        return render(request, 'edit_chefprofile.html', {'form': form})
+        return render(request, 'chefprofile/edit_chefprofile.html', {'form': form})
 
 
 def view_chefprofile(request):
@@ -21,4 +21,4 @@ def view_chefprofile(request):
     print('USER: ', request.user)
     print('PROFILE', chefprofile)
     context = {'chefprofile': chefprofile, }
-    return render(request, 'view_chefprofile.html', context)
+    return render(request, 'chefprofile/view_chefprofile.html', context)
