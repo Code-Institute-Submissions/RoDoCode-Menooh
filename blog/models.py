@@ -29,8 +29,6 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    reference_id = models.AutoField(
-        primary_key=True, default=1, editable=True)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, verbose_name='Cuisine_Category')
 
