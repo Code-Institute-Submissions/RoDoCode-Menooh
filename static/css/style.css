@@ -252,10 +252,13 @@ body {
 
 #prof-pic {
     border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
 }
 
 #message-alert-head {
     padding-top: 1rem;
     padding-bottom: 0;
-    margin-bottom:0;
+    margin-bottom: 0;
 }
