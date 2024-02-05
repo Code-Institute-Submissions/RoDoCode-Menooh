@@ -1,44 +1,44 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
 <div class="container mt-5">
-    <div class="row">
-        <div class="col-4 text-center mx-auto">
-        {% if "placeholder" in user.chefprofile.profile_pic.url %}
-        <img
-            id="prof-pic"
-            src="{% static 'images/nobody.jpg' %}"
-            width="75%"
-            alt="placeholder image"
-        />
-        {% else %}
-        <img
-            id="prof-pic"
-            src="{{ chefprofile.profile_pic.url }}"
-            width="75%"
-            alt="profile_picture"
-        />
-        {% endif %}
-        </div>
+  <div class="row">
+    <div class="col-4 text-center mx-auto">
+      {% if "placeholder" in user.chefprofile.profile_pic.url %}
+      <img
+        id="prof-pic"
+        src="{% static 'images/nobody.jpg' %}"
+        width="75%"
+        alt="placeholder image"
+      />
+      {% else %}
+      <img
+        id="prof-pic"
+        src="{{ chefprofile.profile_pic.url }}"
+        width="75%"
+        alt="profile_picture"
+      />
+      {% endif %}
     </div>
-  
-    <div class="row justify-content-center">
-        <div class="col-10 mx-auto">
-            <!-- Title goes between these h2 tags -->
-            <h3 class="text-center">
-                <i class="fa-solid fa-bowl-food"></i> {{ user.username }}
-            </h3>
-            <p class="text-center">
-                <strong>{{ user.chefprofile.location | safe }}</strong>
-            </p>
-            <!-- Content goes directly underneath this -->
-            <p class="text-center">{{ user.chefprofile.bio | safe }}</p>
-        </div>
-    </div>
+  </div>
 
-<!-- Social Icons goes directly underneath this -->
+  <div class="row justify-content-center">
+    <div class="col-10 mx-auto">
+      <!-- Title goes between these h2 tags -->
+      <h3 class="text-center">
+        <i class="fa-solid fa-bowl-food"></i> {{ user.username }}
+      </h3>
+      <p class="text-center">
+        <strong>{{ user.chefprofile.location | safe }}</strong>
+      </p>
+      <!-- Content goes directly underneath this -->
+      <p class="text-center">{{ user.chefprofile.bio | safe }}</p>
+    </div>
+  </div>
+
+  <!-- Social Icons goes directly underneath this -->
   <div class="row justify-content-center">
     {% if user.chefprofile.website_url %}
-    <div class="col-1 justify-content-center" id="website-icon">
+    <div class="col-1 text-center justify-content-center" id="website-icon">
       <a
         href="{{ user.chefprofile.website_url }}"
         target="_blank"
@@ -58,7 +58,7 @@
       </a>
     </div>
     {% endif %} {% if user.chefprofile.tiktok_url %}
-    <div class="col-1 justify-content-center" id="tiktok-icon">
+    <div class="col-1 text-center justify-content-center" id="tiktok-icon">
       <a
         href="{{ user.chefprofile.tiktok_url }}"
         target="_blank"
@@ -78,7 +78,7 @@
       </a>
     </div>
     {% endif %} {% if user.chefprofile.facebook_url %}
-    <div class="col-1 justify-content-center" id="facebook-icon">
+    <div class="col-1 text-center justify-content-center" id="facebook-icon">
       <a
         href="{{ user.chefprofile.facebook_url }}"
         target="_blank"
@@ -98,7 +98,7 @@
       </a>
     </div>
     {% endif %} {% if user.chefprofile.pinterest_url %}
-    <div class="col-1 justify-content-center" id="pinterest-icon">
+    <div class="col-1 text-center justify-content-center" id="pinterest-icon">
       <a
         href="{{ user.chefprofile.pinterest_url }}"
         target="_blank"
@@ -118,7 +118,7 @@
       </a>
     </div>
     {% endif %} {% if user.chefprofile.instagram_url %}
-    <div class="col-1 justify-content-center" id="instagram-icon">
+    <div class="col-1 text-center justify-content-center" id="instagram-icon">
       <a
         href="{{ user.chefprofile.instagram_url }}"
         target="_blank"
@@ -138,7 +138,7 @@
       </a>
     </div>
     {% endif %} {% if user.chefprofile.twitter_url %}
-    <div class="col-1 justify-content-center" id="twitter-icon">
+    <div class="col-1 text-center justify-content-center" id="twitter-icon">
       <a
         href="{{ user.chefprofile.twitter_url }}"
         target="_blank"
@@ -162,14 +162,18 @@
 
   <br />
 
-<!-- Edit Profile Button goes directly underneath this -->
+  <!-- Edit Profile Button goes directly underneath this -->
   <div class="row">
-    <a class="mx-auto text-center" href="{% url 'edit_chefprofile' %}"
+    <a
+      class="mx-auto text-center justify-content-center"
+      href="{% url 'edit_chefprofile' %}"
       ><button type="button" class="btn btn-success btn-rounded">
         Edit profile
       </button></a
     >
   </div>
 </div>
+
+<div></div>
 
 {% endblock content %}
