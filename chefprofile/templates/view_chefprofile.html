@@ -33,10 +33,11 @@
       <p class="text-center">{{ user.chefprofile.bio | safe }}</p>
     </div>
   </div>
-  <div class="row justify-content-center" id="website-icon">
-    <div class="col-1 justify-content-center">
+  <div class="row justify-content-center">
+    {% if user.chefprofile.website_url %}
+    <div class="col-1 justify-content-center" id="website-icon">
       <a
-        href="{{ user.chefprofile. }}"
+        href="{{ user.chefprofile.website_url }}"
         target="_blank"
         class="social-icons__icon"
       >
@@ -53,9 +54,10 @@
         </svg>
       </a>
     </div>
+    {% endif %} {% if user.chefprofile.tiktok_url %}
     <div class="col-1 justify-content-center" id="tiktok-icon">
       <a
-        href="{{ user.chefprofile. }}"
+        href="{{ user.chefprofile.tiktok_url }}"
         target="_blank"
         class="social-icons__icon"
       >
@@ -72,8 +74,13 @@
         </svg>
       </a>
     </div>
+    {% endif %} {% if user.chefprofile.facebook_url %}
     <div class="col-1 justify-content-center" id="facebook-icon">
-      <a href="#" target="_blank" class="social-icons__icon">
+      <a
+        href="{{ user.chefprofile.facebook_url }}"
+        target="_blank"
+        class="social-icons__icon"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -87,8 +94,13 @@
         </svg>
       </a>
     </div>
+    {% endif %} {% if user.chefprofile.pinterest_url %}
     <div class="col-1 justify-content-center" id="pinterest-icon">
-      <a href="#" target="_blank" class="social-icons__icon">
+      <a
+        href="{{ user.chefprofile.pinterest_url }}"
+        target="_blank"
+        class="social-icons__icon"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -102,8 +114,13 @@
         </svg>
       </a>
     </div>
+    {% endif %} {% if user.chefprofile.instagram_url %}
     <div class="col-1 justify-content-center" id="instagram-icon">
-      <a href="#" target="_blank" class="social-icons__icon">
+      <a
+        href="{{ user.chefprofile.instagram_url }}"
+        target="_blank"
+        class="social-icons__icon"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -117,8 +134,13 @@
         </svg>
       </a>
     </div>
+    {% endif %} {% if user.chefprofile.twitter_url %}
     <div class="col-1 justify-content-center" id="twitter-icon">
-      <a href="#" target="_blank" class="social-icons__icon">
+      <a
+        href="{{ user.chefprofile.twitter_url }}"
+        target="_blank"
+        class="social-icons__icon"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -132,6 +154,7 @@
         </svg>
       </a>
     </div>
+    {% endif %}
   </div>
   <br />
   <div class="row">
