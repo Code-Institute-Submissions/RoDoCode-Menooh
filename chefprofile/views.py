@@ -7,18 +7,19 @@ def edit_chefprofile(request):
     chefprofile = get_object_or_404(ChefProfile, user=request.user)
 
     if request.method == 'POST':
-        form = ChefProfileForm(request.POST, instance=chefprofile)
-        if form.is_valid():
-            form.save()
+        chef_form = ChefProfileForm(data=request.POST, instance=chefprofile)
+        if chef_form.is_valid():
+            chef_form.save()
+            messages.add_message(request, messages.SUCCESS, "Chef Profile \
+                                 Updated")
             return redirect('chefprofile')
+
     else:
-        form = ChefProfileForm(instance=chefprofile)
-        return render(request, 'chefprofile/edit_chefprofile.html', {'form': form})
+        chef_form = ChefProfileForm(instance=chefprofile)
+        return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
 
 
 def view_chefprofile(request):
     chefprofile = get_object_or_404(ChefProfile, user=request.user)
-    print('USER: ', request.user)
-    print('PROFILE', chefprofile)
     context = {'chefprofile': chefprofile, }
     return render(request, 'chefprofile/view_chefprofile.html', context)

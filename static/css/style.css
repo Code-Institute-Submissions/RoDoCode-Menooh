@@ -265,6 +265,15 @@ body {
 }
 
 #pagination-button {
-    position: absolute;
-    bottom: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.spacer {
+    width: 100%;
+    height: 40px;
+}
+
+#dish-container-row {
+    position: relative;
 }

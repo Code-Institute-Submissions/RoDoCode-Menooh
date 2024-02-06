@@ -34,7 +34,7 @@
       <!-- add your form here. Your submit button should 
                                 have the classes of btn, btn-secondary -->
       <form method="post">
-        {{ ChefProfileForm | crispy }} {% csrf_token %}
+        {{ chef_form | crispy }} {% csrf_token %}
         <button class="btn btn-secondary" type="submit">Save</button>
       </form>
     </div>
