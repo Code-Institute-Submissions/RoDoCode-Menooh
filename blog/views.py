@@ -46,7 +46,7 @@ def post_detail(request, slug):
             )
 
     comment_form = CommentForm()
-
+    print('ID: ', post.id)
     return render(
         request,
         "blog/post_detail.html",
