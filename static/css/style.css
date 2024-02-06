@@ -157,6 +157,7 @@ body {
 .dish_wall_container {
     margin: 0;
     padding: 0;
+    padding-bottom: 100px;
     width: 80vw;
     position: absolute;
     left: 50%;
@@ -261,4 +262,9 @@ body {
     padding-top: 1rem;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+#pagination-button {
+    position: absolute;
+    bottom: 0;
 }
