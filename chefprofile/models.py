@@ -23,3 +23,14 @@ class ChefProfile(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        ChefProfile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.chefprofile.save()
