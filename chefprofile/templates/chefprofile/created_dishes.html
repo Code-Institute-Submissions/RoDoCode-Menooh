@@ -1,0 +1,91 @@
+
+<div class="container">
+    <!-- index.html content starts here -->
+    <div class="row">
+        <div class="dish_wall_container">
+            {% for post in post_list %} {%if forloop.counter|add:"2"|divisibleby:3%}
+            <div class="card card_small">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-small" src="{% static 'images/default.jpg' %}"
+                            alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
+                </div>
+            </div>
+            {% elif forloop.counter|add:"1"|divisibleby:3 %}
+            <div class="card card_medium">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}"
+                            alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
+                </div>
+            </div>
+            {% else %}
+            <div class="card card_large">
+                <div class="card-body">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-large" src="{% static 'images/default.jpg' %}"
+                            alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+
+    <div class="row" id="pagination-button">
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+                </li>
+                {% endif %} {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                        NEXT &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>

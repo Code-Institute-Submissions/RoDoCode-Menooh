@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import ChefProfile
 from .forms import ChefProfileForm
 from django.contrib import messages
+from django.template import loader
 
 
 def edit_chefprofile(request):
@@ -26,4 +27,6 @@ def edit_chefprofile(request):
 def view_chefprofile(request):
     chefprofile = get_object_or_404(ChefProfile, user=request.user)
     context = {'chefprofile': chefprofile, }
+    chefprofile = loader.get_template('chefprofile/created_dishes.html')
     return render(request, 'chefprofile/view_chefprofile.html', context)
+
