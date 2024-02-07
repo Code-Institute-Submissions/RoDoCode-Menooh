@@ -157,6 +157,7 @@ body {
 .dish_wall_container {
     margin: 0;
     padding: 0;
+    padding-bottom: 100px;
     width: 80vw;
     position: absolute;
     left: 50%;
@@ -243,7 +244,7 @@ body {
 }
 
 #loginmessage {
-    margin-top: 1rem;
+    margin-top: 60px;
 }
 
 .btn-rounded {
@@ -261,4 +262,14 @@ body {
     padding-top: 1rem;
     padding-bottom: 0;
     margin-bottom: 0;
+}
+
+#pagination-button {
+    margin: 0 auto;
+    position: relative;
+}
+
+.spacer {
+    width: 100%;
+    height: 40px;
 }
