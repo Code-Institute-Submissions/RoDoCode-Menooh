@@ -29,16 +29,4 @@ def edit_chefprofile(request):
 class view_chefprofile(generic.ListView):
     queryset = Post.objects.filter()
     template_name = "chefprofile/view_chefprofile.html"
-    paginate_by = 14
-    
-
-
-# def view_chefprofile(request):
-#     chefprofile = get_object_or_404(ChefProfile, user=request.user)
-#     context = {'chefprofile': chefprofile, }
-#     return render(request, 'chefprofile/view_chefprofile.html', context)
-
-# class PostList(generic.ListView):
-#     queryset = Post.objects.filter(status=1)
-#     template_name = "chefprofile/created_dishes.html"
-#     paginate_by = 14
+    paginate_by = 20

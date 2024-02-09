@@ -213,6 +213,16 @@ body {
     width: 100%;
 }
 
+.card-img-top-special {
+    border-radius: 20px;
+    object-fit: contain;
+    height: 170px;
+    width: 100%;
+    background-color: #f0f0f0;
+    opacity: 75%;
+    box-shadow: 1px 1px 5px 5px rgba(102, 102, 102, 0.6);
+}
+
 .image-container {
     position: relative;
 }

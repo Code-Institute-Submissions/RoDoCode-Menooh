@@ -3,6 +3,17 @@
     <!-- created_dishes.html content starts here -->
     <div class="row">
         <div class="created_dish_wall_container">
+            <div class="card card_small">
+                <div class="card-body">
+                    <a href="#" class="post-link"></a>
+                        <div class="image-container">
+                            <img class="card-img-top-special" src="{% static 'images/add.png' %}" alt="placeholder image" />
+                        </div>
+                        <br>
+                        <h2 class="card-title justify-content-center text-center">Create Dish</h2>
+                    </a>
+                </div>
+            </div>
             {% for post in post_list %}
             {%if post.author == user %}
             <div class="card card_small">
