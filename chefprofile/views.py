@@ -4,6 +4,7 @@ from .models import ChefProfile
 from blog.models import Post
 from .forms import ChefProfileForm
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 
 def edit_chefprofile(request):
@@ -26,7 +27,7 @@ def edit_chefprofile(request):
 
 
 class view_chefprofile(generic.ListView):
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.filter()
     template_name = "chefprofile/view_chefprofile.html"
     paginate_by = 14
     
