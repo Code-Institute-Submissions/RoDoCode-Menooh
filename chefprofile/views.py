@@ -59,10 +59,10 @@ def new_dish(request):
         if dish_form.is_valid():
             Post = dish_form.save(commit=False)
             Post.author = request.user
-            Post.slug = title.replace(" ", "")
+            Post.slug = Post.title.replace(" ", "").isalpha()
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
-            return redirect(reverse('view_chefprofile'))
+            return redirect('view_chefprofile')
         else:
             dish_form = NewDishForm()
     dish_form = NewDishForm()
