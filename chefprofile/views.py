@@ -31,5 +31,3 @@ class view_chefprofile(generic.ListView):
     template_name = "chefprofile/view_chefprofile.html"
     paginate_by = 20
 
-
-    france
