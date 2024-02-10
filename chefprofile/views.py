@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import ChefProfile
 from blog.models import Post
-from .forms import ChefProfileForm
+from .forms import ChefProfileForm, NewDishForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
