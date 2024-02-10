@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ["8000-rodocode-menooh-76tlnlasn2.us2.codeanyapp.com",
-                 ".herokuapp.com"]
+                 ".herokuapp.com",
+                 "8000-rodocode-menooh-tgbpia9h9u.us2.codeanyapp.com"]
 
 
 # Application definition
