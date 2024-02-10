@@ -51,6 +51,19 @@ def new_dish(request):
         return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
 
 
+def new_dish(request):
+    submitted = False
+    if request.method == 'POST':
+        form = NewDishForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(request, 'chefprofile/view_chefprofile.html', {'chefprofile': chefprofile, })
+    else:
+        form = NewDishForm
+        if 'submitted' in request.GET:
+            submitted = True
+    
+    return render(request, 'chefprofile/new_dish.html', {'form': form, 'submitted':submitted})
 
 
 """

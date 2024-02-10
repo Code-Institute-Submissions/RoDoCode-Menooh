@@ -18,22 +18,22 @@
             {%if post.author == user %}
             <div class="card card_small">
                 <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top-small" src="{% static 'images/default.jpg' %}"
-                            alt="placeholder image" />
-                        {% else %}
-                        <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Chef: {{ post.author }}</p>
-                        </div>
-                    </div>
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top-small" src="{% static 'images/default.jpg' %}"
+                                alt="placeholder image" />
+                            {% else %}
+                            <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Chef: {{ post.author }}</p>
+                            </div>
+                        </div>
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
+                        <p class="card-text text-muted h6">{{ post.created_on}}</p>
                     </a>
-                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
                 </div>
             </div>
             {% endif %} 
