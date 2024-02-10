@@ -30,3 +30,6 @@ class view_chefprofile(generic.ListView):
     queryset = Post.objects.filter()
     template_name = "chefprofile/view_chefprofile.html"
     paginate_by = 20
+
+
+    france
