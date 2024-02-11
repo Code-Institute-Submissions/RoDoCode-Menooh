@@ -61,7 +61,8 @@ def new_dish(request):
             Post.author = request.user
             ugly_string = filter(str.isalnum, Post.title)
             clean_string = "".join(ugly_string)
-            Post.slug = clean_string.casefold()
+            Post.slug = clean_string.casefold(
+            )+str(request.user.pk)
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
             return redirect('view_chefprofile')
