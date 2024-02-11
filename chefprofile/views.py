@@ -59,7 +59,9 @@ def new_dish(request):
         if dish_form.is_valid():
             Post = dish_form.save(commit=False)
             Post.author = request.user
-            Post.slug = Post.title.replace(" ", "").isalpha()
+            ugly_string = filter(str.isalnum, Post.title)
+            clean_string = "".join(ugly_string)
+            Post.slug = clean_string.casefold()
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
             return redirect('view_chefprofile')
