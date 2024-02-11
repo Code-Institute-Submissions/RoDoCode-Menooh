@@ -71,7 +71,7 @@ class Cookbook(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    dishes = models.ManyToManyField(Post, null=True, blank=True, related_name='books')
+    dishes = models.ManyToManyField(Post, blank=True, related_name='books')
 
     class Meta:
         ordering = ["-created_on"]
