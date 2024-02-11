@@ -1,6 +1,6 @@
 from django import forms
 from .models import ChefProfile
-from blog.models import Post
+from blog.models import Post, Cookbook
 
 
 class ChefProfileForm(forms.ModelForm):
@@ -15,3 +15,9 @@ class NewDishForm(forms.ModelForm):
         model = Post
         fields = ['title', 'featured_image', 'content',
                   'ingredients', 'status', 'excerpt', 'category']
+
+
+class NewCookbookForm(forms.ModelForm):
+    class Meta:
+        model = Cookbook
+        fields = ['title', 'cover_image', 'description', 'status', 'excerpt']

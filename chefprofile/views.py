@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import ChefProfile
-from blog.models import Post
-from .forms import ChefProfileForm, NewDishForm
+from blog.models import Post, Cookbook
+from .forms import ChefProfileForm, NewDishForm, NewCookbookForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
@@ -65,8 +65,27 @@ def new_dish(request):
             )+str(request.user.pk)
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
-            return redirect('view_chefprofile')
+            return redirect('chefprofile/view_chefprofile')
         else:
             dish_form = NewDishForm()
     dish_form = NewDishForm()
     return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
+
+
+def new_cookbook(request):
+    if request.method == 'POST':
+        cookbook_form = NewCookbookForm(request.POST)
+        if cookbook_form.is_valid():
+            Cookbook = cookbook_form.save(commit=False)
+            Cookbook.collector = request.user
+            ugly_string = filter(str.isalnum, Cookbook.title)
+            clean_string = "".join(ugly_string)
+            Cookbook.slug = clean_string.casefold(
+            )+str(request.user.pk)
+            Cookbook.save()
+            messages.success(request, 'NEW COOKBOOK ADDED!')
+            return redirect('chefprofile/view_chefprofile')
+        else:
+            cookbook_form = NewDishForm()
+    cookbook_form = NewCookbookForm()
+    return render(request, 'chefprofile/new_cookbook.html', {'cookbook_form': cookbook_form})
