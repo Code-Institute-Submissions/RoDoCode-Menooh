@@ -32,25 +32,6 @@ class view_chefprofile(generic.ListView):
     template_name = "chefprofile/view_chefprofile.html"
     paginate_by = 20
 
-"""
-def new_dish(request):
-    new_dish = get_object_or_404(Post, author=request.user)
-
-    if request.method == 'POST':
-        dish_form = NewDishForm(data=request.POST)
-        if dish_form.is_valid():
-            dish_form.save()
-            messages.success(request, 'NEW DISH ADDED!')
-            return HttpResponseRedirect(request, 'chefprofile/view_chefprofile.html')
-        else:
-            messages.error(request,
-                           ('Dish creation failed. Please ensure '
-                            'the form is valid.'))
-            return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
-    else:
-        dish_form = NewDishForm(instance=new_dish)
-        return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
-"""
 
 
 def new_dish(request):

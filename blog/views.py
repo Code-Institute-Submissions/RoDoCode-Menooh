@@ -97,3 +97,8 @@ def comment_delete(request, slug, comment_id):
                              'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def cookbook_contents(request, slug):
+    queryset = Cookbook.dishes.objects.filter(status=1)
+    cookbook = get_object_or_404(queryset, slug=slug)
