@@ -33,7 +33,6 @@ class view_chefprofile(generic.ListView):
     paginate_by = 20
 
 
-
 def new_dish(request):
     if request.method == 'POST':
         dish_form = NewDishForm(request.POST)
