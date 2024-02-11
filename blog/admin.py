@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Category
+from .models import Post, Comment, Category, Cookbook
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -13,6 +13,23 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content', 'id')
 
 
+#    @admin.register(Cookbook)
+#    class CookbookAdmin(SummernoteModelAdmin):
+#
+#        list_display = ('title', 'slug', 'status', 'created_on')
+#        search_fields = ['title', 'description', 'author']
+#        list_filter = ('status', 'created_on',)
+#        prepopulated_fields={'slug': ('title',)}
+#        summernote_fields = ('description', 'id', 'dishes')
+
+#    @admin.register(Category)
+#    class CategoryAdmin(SummernoteModelAdmin):
+#
+#        list_display = ('title')
+#        search_fields = ['title']
+
+
 # Register your models here.
 admin.site.register(Comment)
 admin.site.register(Category)
+admin.site.register(Cookbook)
