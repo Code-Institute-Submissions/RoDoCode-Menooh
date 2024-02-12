@@ -36,7 +36,7 @@
   </div>
 
   <!-- Social Icons goes directly underneath this -->
-  <div class="row justify-content-center">
+  <div class="row justify-content-around">
     {% if user.chefprofile.website_url %}
     <div class="col-1 text-center justify-content-center" id="website-icon">
       <a
@@ -171,7 +171,11 @@
             Edit profile
         </button></a>
     </div>
-    <br>
+</div>
+
+<br>
+
+<div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-2 d-flex justify-content-center">
             <a class="mx-auto justify-content-start" href="{% url 'new_dish' %}">
@@ -180,17 +184,18 @@
         </div>
     </div>
 </div>
-
-{% include 'chefprofile/created_dishes.html' %}
-
-<div class="row d-flex justify-content-center">
-    <div class="col-2 d-flex justify-content-center>
-        <a class="mx-auto justify-content-end" href="{% url 'new_cookbook' %}">
-            <button type="button" class="btn btn-light btn-rounded">Books</button>
-        </a>
+    {% include 'chefprofile/created_dishes.html' %}
+<div class="container"></div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-2 d-flex justify-content-center">
+            <a class="mx-auto justify-content-end" href="{% url 'new_cookbook' %}">
+                <button type="button" class="btn btn-light btn-rounded">Books</button>
+            </a>
+        </div>
     </div>
 </div>
+    {% include 'chefprofile/created_books.html' %}
 
-{% include 'chefprofile/created_books.html' %}
+
 
 {% endblock content %}
