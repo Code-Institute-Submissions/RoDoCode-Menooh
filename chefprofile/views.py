@@ -4,19 +4,22 @@ from django.http import HttpResponseRedirect
 from .models import ChefProfile
 from blog.models import Post, Cookbook
 from .forms import ChefProfileForm, NewDishForm, NewCookbookForm
+from cloudinary.forms import cl_init_js_callbacks 
 from django.contrib import messages
 from django.contrib.auth.models import User
 
 
 def edit_chefprofile(request):
     chefprofile = get_object_or_404(ChefProfile, user=request.user)
+    context = dict( backend_form = ChefProfileForm())
 
     if request.method == 'POST':
-        chef_form = ChefProfileForm(request.POST, instance=chefprofile)
+        chef_form = ChefProfileForm(request.POST, request.FILES)
+        context['posted'] = chef_form.instance
         if chef_form.is_valid():
             chef_form.save()
             messages.success(request, 'Profile updated successfully')
-            return render(request, 'chefprofile/view_chefprofile.html', {'chefprofile': chefprofile, })
+            return render(request, 'chefprofile/edit_chefprofile.html', context)
         else:
             messages.error(request,
                            ('Update failed. Please ensure '
