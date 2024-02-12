@@ -21,6 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
+# Cloudinary imports
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -165,3 +172,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Cloudinary - Django integration
+cloudinary.config(
+
+    cloud_name = "ds5req3fd",
+    api_key = "235837231566458",
+    api_secret = "9TYu3xzHZqqJtbeUFvLxFMuah6o",
+
+)
