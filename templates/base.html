@@ -48,55 +48,56 @@ url 'account_logout' as logout_url %} -->
 
   <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container">
-            <div class="row justify-content-between">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"> -->
+        <div class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="margin-left:0; margin-right:0; width:100%;">
+            <div class="row justify-content-between" style="margin-left:0; margin-right:0; width:100%;">
+                <div class="col-1">
+                    <a class="navbar-brand" href="{% url 'home' %}">
+                        <span class="brand">
+                            <i class="fa-solid fa-bowl-food"></i>
+                            <strong> menOoh</strong>
+                        </span>
+                    </a>
+                </div>
                 <div class="col-3">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="{% url 'home' %}"
-                        ><span class="brand"
-                            ><i class="fa-solid fa-bowl-food"></i><strong> menOoh</strong></span
-                        ></a
-                        >
-                        <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarText"
-                        aria-controls="navbarText"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                        >
+                    <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarText"
+                    aria-controls="navbarText"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
                         <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarText">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                                <li class="nav-item">
-                                <a
-                                    class="nav-link {% if request.path == home_url %}active{% endif %}"
-                                    aria-current="page"
-                                    href="{% url 'home' %}"
-                                    >Home</a>
-                                </li>
-                                <li class="nav-item">
-                                <a
-                                    class="nav-link {% if request.path == about_url %}active{%endif%}"
-                                    aria-current="page"
-                                    href="{% url 'about' %}"
-                                    >About</a>
-                                </li>
-                                <li class="nav-item">
-                                <a
-                                    class="nav-link {% if request.path == contact_url %}active{%endif%}"
-                                    aria-current="page"
-                                    href="{% url 'contact' %}"
-                                    >Contact</a>
-                                </li>
-                            </ul>
-                        </div>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                            <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == home_url %}active{% endif %}"
+                                aria-current="page"
+                                href="{% url 'home' %}"
+                                >Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == about_url %}active{%endif%}"
+                                aria-current="page"
+                                href="{% url 'about' %}"
+                                >About</a>
+                            </li>
+                            <li class="nav-item">
+                            <a
+                                class="nav-link {% if request.path == contact_url %}active{%endif%}"
+                                aria-current="page"
+                                href="{% url 'contact' %}"
+                                >Contact</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <div class="input-group" id="searchbar">
                         <input type="search" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
@@ -105,7 +106,7 @@ url 'account_logout' as logout_url %} -->
                     </div>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="col-1">
+                <div class="col-3">
                     <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
                         <a href="{% url 'account_logout' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
@@ -113,8 +114,6 @@ url 'account_logout' as logout_url %} -->
                         </button></a
                         >
                     </div>
-                </div>
-                <div class="col-1">
                     <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
                         <a href="{% url 'view_chefprofile' %}"
                         ><button type="button" class="btn btn-success btn-rounded">
@@ -124,7 +123,7 @@ url 'account_logout' as logout_url %} -->
                     </div>
                 </div>
                 {% else %}
-                <div class="col-1">
+                <div class="col-3">
                     <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
                         <a href="{% url 'account_login' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
@@ -132,8 +131,6 @@ url 'account_logout' as logout_url %} -->
                         </button></a
                         >
                     </div>
-                </div>
-                <div class="col-1">
                     <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
                         <a href="{% url 'account_signup' %}"
                         ><button type="button" class="btn btn-success btn-rounded">
@@ -145,7 +142,7 @@ url 'account_logout' as logout_url %} -->
                 {% endif %}
             </div>
         </div>
-    </nav>
+<!-- </nav> -->
     <!-- displaying Django messages -->
     <div class="container text-center" id="message-alert-head">
       <div class="row">
