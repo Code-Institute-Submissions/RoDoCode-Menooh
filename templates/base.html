@@ -49,9 +49,9 @@ url 'account_logout' as logout_url %} -->
   <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"> -->
-        <div class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="margin-left:0; margin-right:0; width:100%;">
+        <div class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="max-width:2500px;">
             <div class="row justify-content-between" style="margin-left:0; margin-right:0; width:100%;">
-                <div class="col-1">
+                <div class="col-auto">
                     <a class="navbar-brand" href="{% url 'home' %}">
                         <span class="brand">
                             <i class="fa-solid fa-bowl-food"></i>
@@ -59,7 +59,7 @@ url 'account_logout' as logout_url %} -->
                         </span>
                     </a>
                 </div>
-                <div class="col-3">
+                <div class="col-auto">
                     <button
                     class="navbar-toggler"
                     type="button"
@@ -73,7 +73,7 @@ url 'account_logout' as logout_url %} -->
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                            <li class="nav-item">
+                            <li class="nav-item me-5">
                             <a
                                 class="nav-link {% if request.path == home_url %}active{% endif %}"
                                 aria-current="page"
@@ -87,7 +87,7 @@ url 'account_logout' as logout_url %} -->
                                 href="{% url 'about' %}"
                                 >About</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item ms-5">
                             <a
                                 class="nav-link {% if request.path == contact_url %}active{%endif%}"
                                 aria-current="page"
@@ -97,7 +97,7 @@ url 'account_logout' as logout_url %} -->
                         </ul>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-3 col-md-3 col-lg-4 mt-1">
                     <div class="input-group" id="searchbar">
                         <input type="search" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
@@ -106,32 +106,34 @@ url 'account_logout' as logout_url %} -->
                     </div>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="col-3">
-                    <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
+                <div class="col-auto justify-content-end mt-1">
+                    <div class="d-inline me-1">
                         <a href="{% url 'account_logout' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
                             Log out
                         </button></a
                         >
                     </div>
-                    <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
-                        <a href="{% url 'view_chefprofile' %}"
-                        ><button type="button" class="btn btn-success btn-rounded">
-                            Profile
-                        </button></a
-                        >
+                    <div class="d-inline">
+                        <a href="{% url 'view_chefprofile' %}">
+                        {% if "placeholder" in user.chefprofile.profile_pic.url %}
+                        <img id="prof-logo" src="{% static 'images/nobody.jpg' %}" alt="placeholder image" />
+                        {% else %}
+                        <img id="prof-logo" src="{{ chefprofile.profile_pic.url }}" alt="profile_picture" />
+                        {% endif %}
+                        </a>
                     </div>
                 </div>
                 {% else %}
-                <div class="col-3">
-                    <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
+                <div class="col-auto justify-content-end mt-1">
+                    <div class="d-inline me-1">
                         <a href="{% url 'account_login' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
                             Log in
                         </button></a
                         >
                     </div>
-                    <div class="d-inline my-2 my-lg-0 my-sm-0 px-4">
+                    <div class="d-inline">
                         <a href="{% url 'account_signup' %}"
                         ><button type="button" class="btn btn-success btn-rounded">
                             Sign up

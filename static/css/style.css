@@ -284,6 +284,13 @@ body {
     object-fit: cover;
 }
 
+#prof-logo {
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+}
+
 #message-alert-head {
     padding-top: 1rem;
     padding-bottom: 0;
