@@ -21,7 +21,7 @@
             <p>
                 Give other users as much detail as you can in steps to help them recreate your special dish. Don't forget to add the ingredients separately.
             </p>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {{ dish_form | crispy }} {% csrf_token %}
                 <button class="btn btn-secondary" type="submit">Save</button>
             </form>

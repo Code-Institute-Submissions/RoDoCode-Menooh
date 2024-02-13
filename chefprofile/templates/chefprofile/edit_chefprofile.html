@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% load crispy_forms_tags %} 
-{%block content %}
+{% block content %}
 
 <div class="container mt-5">
   <div class="row">
@@ -33,7 +33,7 @@
 
       <!-- add your form here. Your submit button should 
                                 have the classes of btn, btn-secondary -->
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         {{ chef_form | crispy }} {% csrf_token %}
         <button class="btn btn-secondary" type="submit">Save</button>
       </form>

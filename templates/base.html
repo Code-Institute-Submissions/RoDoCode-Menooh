@@ -119,7 +119,7 @@ url 'account_logout' as logout_url %} -->
                         {% if "placeholder" in user.chefprofile.profile_pic.url %}
                         <img id="prof-logo" src="{% static 'images/nobody.jpg' %}" alt="placeholder image" />
                         {% else %}
-                        <img id="prof-logo" src="{{ chefprofile.profile_pic.url }}" alt="profile_picture" />
+                        <img id="prof-logo" src="{{ user.chefprofile.profile_pic.url }}" alt="profile_picture" />
                         {% endif %}
                         </a>
                     </div>

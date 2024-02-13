@@ -32,6 +32,7 @@ class view_chefprofile(generic.ListView):
     paginate_by = 20
 
 
+@login_required
 def new_dish(request):
     if request.method == 'POST':
         dish_form = NewDishForm(request.POST)
@@ -44,7 +45,7 @@ def new_dish(request):
             )+str(request.user.pk)
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
-            return redirect('chefprofile/view_chefprofile')
+            return redirect('view_chefprofile')
         else:
             dish_form = NewDishForm()
     dish_form = NewDishForm()
