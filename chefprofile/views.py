@@ -35,7 +35,7 @@ class view_chefprofile(generic.ListView):
 @login_required
 def new_dish(request):
     if request.method == 'POST':
-        dish_form = NewDishForm(request.POST)
+        dish_form = NewDishForm(request.POST, request.FILES,)
         if dish_form.is_valid():
             Post = dish_form.save(commit=False)
             Post.author = request.user
@@ -43,12 +43,13 @@ def new_dish(request):
             clean_string = "".join(ugly_string)
             Post.slug = clean_string.casefold(
             )+str(request.user.pk)
+            if 'featured_image' in request.FILES:
+                Post.featured_image = request.FILES['featured_image']
             Post.save()
             messages.success(request, 'NEW DISH ADDED!')
             return redirect('view_chefprofile')
-        else:
-            dish_form = NewDishForm()
-    dish_form = NewDishForm()
+    else:
+        dish_form = NewDishForm()
     return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
 
 
