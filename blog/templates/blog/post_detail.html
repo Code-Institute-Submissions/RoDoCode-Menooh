@@ -12,11 +12,11 @@
         <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
       </div>
       <div class="d-none d-md-block col-md-6 masthead-image">
-        <img
-          src="{% static 'images/default.jpg' %}"
-          class="scale"
-          alt="placeholder"
-        />
+        {% if "placeholder" in post.featured_image.url %}
+        <img class="scale" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+        {% else %}
+        <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+        {% endif %}
       </div>
     </div>
   </div>
@@ -138,12 +138,35 @@
 </div>
 
 <div class="container" id="detailed_recipe_card" style="max-height:732" >
-    v class="row">
-        <div class="col-auto mx-2" id="mega-recipe-card" style="max-width:1016px">
+    <div class="row">
+        <div class="col-auto mx-2" id="mega-recipe-card">
             <div class="row">
                 <div class="col-6">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img class="scale" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                    {% else %}
+                    <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                    {% endif %}
                 </div>
                 <div class="col-6">
+                    <div class="row">
+                        <div class="col-6 mx-1 my-1">
+                            <div class="d-inline border border-dark">
+                                <p>COOKBOOKS DROP DOWN</p>
+                            </div>
+                        </div>
+                        <div class="col-6 mx-1 my-1">
+                            <div class="d-inline">
+                                <a href="{% url 'account_signup' %}"><button type="button" class="btn btn-success btn-rounded">
+                                        Sign up
+                                    </button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                    </div>
                 </div>
             </div>
         </div>

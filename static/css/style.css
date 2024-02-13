@@ -273,6 +273,12 @@ body {
     background-color: transparent;
 }
 
+#mega-recipe-card {
+    max-width:1016px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px 5px rgba(102, 102, 102, 0.6);
+}
+
 #loginmessage {
     margin-top: 60px;
 }
