@@ -18,6 +18,7 @@ def edit_chefprofile(request):
         context['posted'] = chef_form.instance
         if chef_form.is_valid():
             chef_form.save()
+            ret = dict(photo_id=chef_form.instance.id)
             messages.success(request, 'Profile updated successfully')
             return render(request, 'chefprofile/edit_chefprofile.html', context)
         else:
