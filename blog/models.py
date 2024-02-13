@@ -12,7 +12,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     title = models.CharField(max_length=250)
-    
+
     class Meta:
         ordering = ["title"]
 
@@ -26,7 +26,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
-    featured_image = CloudinaryField('featured_image', default='placeholder')
+    featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     ingredients = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -65,7 +65,7 @@ class Cookbook(models.Model):
     collector = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_cookbooks"
     )
-    cover_image = CloudinaryField('cover_image', default='placeholder')
+    cover_image = CloudinaryField('image', default='placeholder')
     description = models.TextField(max_length=500)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)

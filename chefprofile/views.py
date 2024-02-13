@@ -1,34 +1,29 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import ChefProfile
 from blog.models import Post, Cookbook
 from .forms import ChefProfileForm, NewDishForm, NewCookbookForm
-from cloudinary.forms import cl_init_js_callbacks 
+from cloudinary.forms import cl_init_js_callbacks
 from django.contrib import messages
 from django.contrib.auth.models import User
 
 
+@login_required
 def edit_chefprofile(request):
-    chefprofile = get_object_or_404(ChefProfile, user=request.user)
-    context = dict( backend_form = ChefProfileForm())
-
     if request.method == 'POST':
-        chef_form = ChefProfileForm(request.POST, request.FILES)
-        context['posted'] = chef_form.instance
+        chef_form = ChefProfileForm(
+            request.POST, request.FILES, instance=request.user.chefprofile)
         if chef_form.is_valid():
-            chef_form.save()
-            ret = dict(photo_id=chef_form.instance.id)
-            messages.success(request, 'Profile updated successfully')
-            return render(request, 'chefprofile/edit_chefprofile.html', context)
-        else:
-            messages.error(request,
-                           ('Update failed. Please ensure '
-                            'the form is valid.'))
-            return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
+            chefprofile = chef_form.save(commit=False)
+            if 'profile_pic' in request.FILES:
+                chefprofile.profile_pic = request.FILES['profile_pic']
+            chefprofile.save()
+            return redirect('view_chefprofile')
     else:
-        chef_form = ChefProfileForm(instance=chefprofile)
-        return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
+        chef_form = ChefProfileForm(instance=request.user.chefprofile)
+    return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
 
 
 class view_chefprofile(generic.ListView):
@@ -73,3 +68,27 @@ def new_cookbook(request):
             cookbook_form = NewDishForm()
     cookbook_form = NewCookbookForm()
     return render(request, 'chefprofile/new_cookbook.html', {'cookbook_form': cookbook_form})
+
+
+"""
+def edit_chefprofile(request):
+    chefprofile = get_object_or_404(ChefProfile, user=request.user)
+    context = dict( backend_form = ChefProfileForm())
+
+    if request.method == 'POST':
+        chef_form = ChefProfileForm(request.POST, request.FILES)
+        context['posted'] = chef_form.instance
+        if chef_form.is_valid():
+            chef_form.save()
+            ret = dict(photo_id=chef_form.instance.id)
+            messages.success(request, 'Profile updated successfully')
+            return render(request, 'chefprofile/edit_chefprofile.html', context)
+        else:
+            messages.error(request,
+                           ('Update failed. Please ensure '
+                            'the form is valid.'))
+            return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
+    else:
+        chef_form = ChefProfileForm(instance=chefprofile)
+        return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
+"""

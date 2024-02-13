@@ -10,15 +10,15 @@ from .forms import CommentForm
 
 
 # class PostList(generic.ListView):
-    # queryset = Post.objects.filter(status=1)
-    # template_name = "blog/index.html"
-    # paginate_by = 14
+# queryset = Post.objects.filter(status=1)
+# template_name = "blog/index.html"
+# paginate_by = 14
 
-    
+
 def PostList(request):
 
     page_number = request.GET.get('page', 1)
-    paginator = Paginator(Post.objects.all(), 18)
+    paginator = Paginator(Post.objects.filter(status=1), 18)
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'blog/index.html', {'page_obj': page_obj})
