@@ -14,7 +14,7 @@
                     {% if "placeholder" in post.featured_image.url %}
                     <img class="scale" src="{% static 'images/default.jpg' %}" alt="placeholder image" style="border-radius:50px 0 0 50px;"/>
                     {% else %}
-                    <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 50px 0 0;"/>
+                    <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px;"/>
                     {% endif %}
                     <div class="image-flash">
                         <p class="author">Chef: {{ post.author }} | {{ post.created_on }}</p>
