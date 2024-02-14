@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
 from .models import Post, Comment, Cookbook
 from .forms import CommentForm
+import random
 
 # Create your views here.
 

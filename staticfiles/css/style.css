@@ -146,11 +146,11 @@ body {
 
 :root {
     --card_width: 250px;
-    --row_increment: 10px;
+  /*  --row_increment: 10px; */
     --card_border_radius: 16px;
-    --card_small: 26;
-    --card_medium: 33;
-    --card_large: 45;
+    --card_small: 22;
+    --card_medium: 29;
+    --card_large: 41;
 }
 
 .dish_wall_container {
@@ -231,6 +231,7 @@ body {
 }
 
 .card-title {
+    margin-bottom: 0 !important;
     font-size: 1rem;
     white-space: pre;
     overflow: hidden;
@@ -273,6 +274,12 @@ body {
     background-color: transparent;
 }
 
+#mega-recipe-card {
+    max-width:1016px;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px 5px rgba(102, 102, 102, 0.6);
+}
+
 #loginmessage {
     margin-top: 60px;
 }
@@ -281,6 +288,13 @@ body {
     border-radius: 50%;
     height: 140px;
     width: 140px;
+    object-fit: cover;
+}
+
+#prof-logo {
+    border-radius: 50%;
+    height: 38px;
+    width: 38px;
     object-fit: cover;
 }
 
