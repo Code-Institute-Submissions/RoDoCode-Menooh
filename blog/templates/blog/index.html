@@ -23,68 +23,65 @@
             {% for post in page_obj %} {%if forloop.counter|add:"2"|divisibleby:3%}
             <div class="card card_large">
                 <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top-large" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                        {% else %}
-                        <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Chef: {{ post.author }}</p>
-                        </div>
-                    </div>
                     <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top-large" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                            {% else %}
+                            <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Chef: {{ post.author }}</p>
+                            </div>
+                        </div>
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
-                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
                 </div>
             </div>
             {% elif forloop.counter|add:"1"|divisibleby:3 %}
             <div class="card card_medium">
                 <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                        {% else %}
-                        <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Chef: {{ post.author }}</p>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                            {% else %}
+                            <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Chef: {{ post.author }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
-                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
                 </div>
             </div>
             {% else %}
             <div class="card card_small">
                 <div class="card-body">
-                    <div class="image-container">
-                        {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                        {% else %}
-                        <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                        {% endif %}
-                        <div class="image-flash">
-                            <p class="author">Chef: {{ post.author }}</p>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
+                        <div class="image-container">
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                            {% else %}
+                            <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                            {% endif %}
+                            <div class="image-flash">
+                                <p class="author">Chef: {{ post.author }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
-                    <p class="card-text text-muted h6">{{ post.created_on}}</p>
                 </div>
             </div>
             {% endif %} 
             
             {% if page_obj.has_next %}
             <span hx-get="{% url 'home' %}?page={{ page_obj.next_page_number }}" hx-swap="beforeend" hx-target=".dish_wall_container"
-                hx-select=".card" hx-trigger="revealed">
+                hx-select=".card" hx-trigger="revealed" style="height:0">
             </span>
             {% endif %}
 

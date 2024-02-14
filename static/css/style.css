@@ -146,11 +146,11 @@ body {
 
 :root {
     --card_width: 250px;
-    --row_increment: 10px;
+  /*  --row_increment: 10px; */
     --card_border_radius: 16px;
-    --card_small: 26;
-    --card_medium: 33;
-    --card_large: 45;
+    --card_small: 22;
+    --card_medium: 29;
+    --card_large: 41;
 }
 
 .dish_wall_container {
@@ -231,6 +231,7 @@ body {
 }
 
 .card-title {
+    margin-bottom: 0 !important;
     font-size: 1rem;
     white-space: pre;
     overflow: hidden;
