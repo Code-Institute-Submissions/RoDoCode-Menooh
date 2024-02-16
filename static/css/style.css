@@ -346,3 +346,24 @@ body {
 #created_dishes_list {
     max-width: 1140px;
 }
+
+
+
+@media only screen and (max-width: 743px) {
+
+    #auth-message {
+      margin-top: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 578px) {
+
+    #detailed_recipe_card {
+        margin-top: 0px !important;
+    }
+}
+@media only screen and (max-width: 509px) {
+    #nav-search-input {
+        width: 55px;
+    }
+}

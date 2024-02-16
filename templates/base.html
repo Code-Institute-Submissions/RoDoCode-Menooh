@@ -97,16 +97,16 @@ url 'account_logout' as logout_url %} -->
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3 col-md-3 col-lg-4 mt-1">
+                <div class="col-auto mt-1">
                     <div class="input-group" id="searchbar">
-                        <input type="search" class="form-control" placeholder="Search for...">
+                        <input type="search" class="form-control" id="nav-search-input" placeholder="Search for...">
                         <span class="input-group-btn">
                             <button class="btn btn-outline-success btn-rounded my-2 my-sm-0" type="button">Search</button>
                         </span>
                     </div>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="col-auto justify-content-end mt-1">
+                <div class="col-auto justify-content-end my-auto">
                     <div class="d-inline me-1">
                         <a href="{% url 'account_logout' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
@@ -125,7 +125,7 @@ url 'account_logout' as logout_url %} -->
                     </div>
                 </div>
                 {% else %}
-                <div class="col-auto justify-content-end mt-1">
+                <div class="col-auto justify-content-end my-auto">
                     <div class="d-inline me-1">
                         <a href="{% url 'account_login' %}"
                         ><button type="button" class="btn btn-danger btn-rounded">
@@ -171,9 +171,9 @@ url 'account_logout' as logout_url %} -->
 
     <main class="flex-shrink-0 main-bg mx-auto mb-5" id="loginmessage">
       {% if user.is_authenticated %}
-      <p class="text-end m-1">You are logged in as {{ user }}</p>
+      <p class="text-end m-1 me-5 pe-5" id="auth-message">You are logged in as {{ user }}</p>
       {% else %}
-      <p class="text-end m-1">You are not logged in</p>
+      <p class="text-end m-1 me-5 pe-5" id="auth-message">You are not logged in</p>
       {% endif %} 
 
       {% block content %}
