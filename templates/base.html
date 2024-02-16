@@ -169,7 +169,7 @@ url 'account_logout' as logout_url %} -->
       </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg mx-auto mb-5" id="loginmessage">
+    <main class="flex-shrink-0 main-bg mx-auto mb-5 mt-1" id="loginmessage">
       {% if user.is_authenticated %}
       <p class="text-end m-1 me-5 pe-5" id="auth-message">You are logged in as {{ user }}</p>
       {% else %}
