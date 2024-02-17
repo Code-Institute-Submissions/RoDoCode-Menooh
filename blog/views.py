@@ -26,12 +26,11 @@ def PostList(request):
 
 
 def post_detail(request, slug):
-    queryset = Post.objects.filter()
     post = get_object_or_404(Post, slug=slug)
     cookbooks = Cookbook.objects.filter(collector=request.user)
     comment_form = CommentForm()
     comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
+    comment_count = post.comments.filter().count()
 
     if request.method == 'POST':
         if 'post_comment' in request.POST:
@@ -50,6 +49,7 @@ def post_detail(request, slug):
             cookbook = get_object_or_404(Cookbook, id=cookbook_id, collector=request.user)
             cookbook.dishes.add(post)
             cookbook.save()
+            messages.add_message(request, messages.SUCCESS, 'Recipe added to cookbook!')
             return redirect('post_detail', slug=slug)
     context = {
         'post': post,
@@ -60,37 +60,6 @@ def post_detail(request, slug):
     }
     return render(request, 'blog/post_detail.html', context)
 
-"""
-def post_detail(request, slug):
-
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
-
-    if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
-            )
-
-    comment_form = CommentForm()
-    print('ID: ', post.id)
-    return render(
-        request,
-        "blog/post_detail.html",
-        {"post": post,
-         "comments": comments,
-         "comment_count": comment_count,
-         "comment_form": comment_form, },
-    )
-"""
 
 def comment_edit(request, slug, comment_id):
     """
@@ -135,5 +104,32 @@ def comment_delete(request, slug, comment_id):
 
 
 def cookbook_contents(request, slug):
-    queryset = Cookbook.dishes.objects.filter(status=1)
-    cookbook = get_object_or_404(queryset, slug=slug)
+    cookbook = get_object_or_404(Cookbook, slug=slug)
+    dishes = Cookbook.dishes.objects.filter()
+    context = { 'dishes': dishes, 'cookbook': cookbook, }
+    return render(request, 'blog/cookbook_content.html', context)
+
+
+def cookbook_edit(request, slug, cookbook_id):
+    if request.method == "POST":
+        cookbook = get_object_or_404(Cookbook, slug=slug)
+        cookbook_form = CookbookPostForm(data=request.POST, instance=cookbook)
+        if cookbook_form.is_valid() and cookbook.collector == request.user:
+            cookbook = cookbook_form.save(commit=False)
+            cookbook.save()
+            messages.add_message(request, messages.SUCCESS, 'Cookbook Updated!')
+        else:
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating cookbook!')
+    return HttpResponseRedirect(reverse('cookbook_content', args=[slug]))
+
+
+def cookbook_delete(request, slug, cookbook_id):
+    cookbook = get_object_or_404(Cookbook, pk=cookbook_id)
+    if cookbook.collector == request.user:
+        cookbook.delete()
+        messages.add_message(request, messages.SUCCESS, 'Cookbook deleted!')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own cookbooks!')
+    return HttpResponseRedirect(reverse('view_chefprofile', args=[slug]))
