@@ -3,26 +3,33 @@
 {% load crispy_forms_tags %}
 
 <!-- Displaying The Fullscreen Recipe Card -->
-<div class="container" id="detailed_recipe_card" style="max-height:732" >
+<div class="container mt-5 mb-5" id="detailed_recipe_card" >
     <div class="row justify-content-center">
-        <div class="col-auto justify-content-center">
-            <h1 class="my-4">{{ post.title }}</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-auto mx-2" id="mega-recipe-card">
+        <div class="col-11 mx-2" id="mega-recipe-card">
             <div class="row">
-                <div class="image-container col-6 px-0">
+                <div class="image-container col-6 px-0" style="max-height:300px">
                     {% if "placeholder" in post.featured_image.url %}
-                    <img class="scale" src="{% static 'images/default.jpg' %}" alt="placeholder image" style="border-radius:50px 0 0 50px;"/>
+                    <img class="object-fit-cover" id="post-image" src="{% static 'images/default.jpg' %}" alt="placeholder image" style="border-radius:50px 0 0 50px;"/>
                     {% else %}
-                    <img class="scale" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px;"/>
+                    <img class="object-fit-cover" id="post-image" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px;"/>
                     {% endif %}
-                    <div class="image-flash">
-                        <p class="author">Chef: {{ post.author }} | {{ post.created_on }}</p>
-                    </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 my-auto">
+                    <div class="row justify-content-center mx-2">
+                        <div class="col-auto justify-content-center">
+                            <h1 class="my-4">{{ post.title }}</h1>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mx-2">
+                        <div class="col-auto mx-1">
+                            <h2 class="card-text">{{ post.category | safe }}</h2>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mx-2">
+                        <div class="col-auto mx-1">
+                            <p>Chef: {{ post.author }} | {{ post.created_on }}</p>
+                        </div>
+                    </div>
                     <div class="row justify-content-end me-1 mt-3">
                         <form method="post">
                         <div class="col-auto mx-1 my-1 d-inline">
@@ -38,21 +45,26 @@
                         </div>
                         </form>
                     </div>
-                    <div class="row">
-                        <div class="col-auto mx-1">
-                            <p class="card-text">{{ post.content | safe }}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-auto mx-1">
-                            <p class="card-text">{{ post.ingredients | safe }}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-auto mx-1">
-                            <p class="card-text">{{ post.category | safe }}</p>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 ms-3">
+            <div class="row justify-content-end">
+                <div class="col-11 mx-1">
+                    <h2>Method</h2>
+                    <p class="card-text">{{ post.content | safe }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 me-3">
+            <div class="row justify-content-center">
+                <div class="col-auto mx-1" id="ingredients">
+                    <h2>Ingredients:</h2>
+                    <p class="card-text">{{ post.ingredients | safe }}</p>
                 </div>
             </div>
         </div>

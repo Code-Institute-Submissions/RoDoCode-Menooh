@@ -274,6 +274,13 @@ body {
     background-color: transparent;
 }
 
+#post-image {
+    border-radius:50px 0 0 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 #jumbotron-image {
     border-radius:50px 0 0 50px;
     width: 100%;
@@ -299,10 +306,10 @@ body {
 }
 
 #detailed_recipe_card {
-    width: 100%;
+    /* width: 100%;
     height: 100%;
     max-width: none;
-    max-height: none;
+    max-height: none; */
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
@@ -347,7 +354,10 @@ body {
     max-width: 1140px;
 }
 
-
+#ingredients {
+    outline: 5px dotted black;
+    background-color:#cdfff8;
+}
 
 @media only screen and (max-width: 743px) {
 
