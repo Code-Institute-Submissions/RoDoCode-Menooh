@@ -26,18 +26,40 @@ def PostList(request):
 
 
 def post_detail(request, slug):
-    """
-    Display an individual :model:`blog.Post`.
+    post = get_object_or_404(Post, slug=slug)
+    cookbooks = Cookbook.objects.filter(collector=request.user)
+    comment_form = CommentForm()
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.filter(approved=True).count()
+    if request.method == 'POST':
+        if 'comment' in request.POST:
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.author = request.user
+                comment.post = post
+                comment.save()
+                messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval')
+                return redirect('post_detail', slug=slug)
+        elif 'save_to_cookbook' in request.POST:
+            cookbook_id = request.POST.get('cookbook_id')
+            cookbook = get_object_or_404(Cookbook, id=cookbook_id, collector=request.user)
+            cookbook.dishes.add(post)
+            cookbook.save()
+            return redirect('blog/post_detail', slug=slug)
+    context = {
+        'post': post,
+        'comment_form': comment_form,
+        "comment_count": comment_count,
+        "comments": comments,
+        'cookbooks': cookbooks,
+    }
+    return render(request, 'blog/post_detail.html', context)
 
-    **Context**
-
-    ``post``
-        An instance of :model:`blog.Post`.
-
-    **Template:**
-
-    :template:`blog/post_detail.html`
-    """
+"""
+def post_detail(request, slug):
 
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -66,7 +88,7 @@ def post_detail(request, slug):
          "comment_count": comment_count,
          "comment_form": comment_form, },
     )
-
+"""
 
 def comment_edit(request, slug, comment_id):
     """

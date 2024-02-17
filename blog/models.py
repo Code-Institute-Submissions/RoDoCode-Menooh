@@ -35,6 +35,10 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, verbose_name='Cuisine_Category')
+    prep_time_minutes = models.PositiveIntegerField(default=25)
+    prep_time_hours = models.PositiveIntegerField(default=0)
+    cook_time_minutes = models.PositiveIntegerField(default=45)
+    cook_time_hours = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ["-created_on"]
