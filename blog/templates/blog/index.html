@@ -20,6 +20,7 @@
                     </a>
                 </div>
             </div>
+            <!-- Large Dish Cards -->
             {% for post in page_obj %} {%if forloop.counter|add:"2"|divisibleby:3%}
             <div class="card card_large">
                 <div class="card-body">
@@ -39,10 +40,11 @@
                     </a>
                 </div>
             </div>
+            <!-- Medium Dish Cards -->
             {% elif forloop.counter|add:"1"|divisibleby:3 %}
             <div class="card card_medium">
                 <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <div class="image-container">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
@@ -59,9 +61,10 @@
                 </div>
             </div>
             {% else %}
+            <!-- Small Dish Cards -->
             <div class="card card_small">
                 <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <div class="image-container">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
@@ -94,7 +97,7 @@
 </div>
 {% else %}
 <br>
-<div class="container mt-5" id="detailed_recipe_card">
+<div class="container mt-1" id="detailed_recipe_card">
     <div class="row justify-content-center mx-2">
         <div class="col-11 mx-2" id="mega-recipe-card">
             <div class="row">

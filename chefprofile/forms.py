@@ -14,7 +14,7 @@ class NewDishForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'featured_image', 'content',
-                  'ingredients', 'status', 'excerpt', 'category']
+                  'ingredients', 'status', 'excerpt', 'category', 'prep_time_minutes', 'prep_time_hours', 'cook_time_minutes', 'cook_time_hours']
 
 
 class NewCookbookForm(forms.ModelForm):

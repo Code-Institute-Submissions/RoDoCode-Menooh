@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -26,14 +26,16 @@ def PostList(request):
 
 
 def post_detail(request, slug):
+    queryset = Post.objects.filter()
     post = get_object_or_404(Post, slug=slug)
     cookbooks = Cookbook.objects.filter(collector=request.user)
     comment_form = CommentForm()
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+
     if request.method == 'POST':
-        if 'comment' in request.POST:
-            comment_form = CommentForm(request.POST)
+        if 'post_comment' in request.POST:
+            comment_form = CommentForm(data=request.POST)
             if comment_form.is_valid():
                 comment = comment_form.save(commit=False)
                 comment.author = request.user
