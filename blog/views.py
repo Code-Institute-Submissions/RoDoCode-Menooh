@@ -50,7 +50,7 @@ def post_detail(request, slug):
             cookbook = get_object_or_404(Cookbook, id=cookbook_id, collector=request.user)
             cookbook.dishes.add(post)
             cookbook.save()
-            return redirect('blog/post_detail', slug=slug)
+            return redirect('post_detail', slug=slug)
     context = {
         'post': post,
         'comment_form': comment_form,

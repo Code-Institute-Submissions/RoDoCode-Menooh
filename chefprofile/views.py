@@ -26,10 +26,17 @@ def edit_chefprofile(request):
     return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
 
 
-class view_chefprofile(generic.ListView):
-    queryset = Post.objects.filter()
-    template_name = "chefprofile/view_chefprofile.html"
+def view_chefprofile(request):
+    chef_profile = ChefProfile.objects.get(user=request.user)
+    chef_posts = Post.objects.filter(author=request.user)
+    chef_cookbooks = Cookbook.objects.filter(collector=request.user)
     paginate_by = 20
+    context = {
+        'posts': chef_posts,
+        'cookbooks': chef_cookbooks,
+        'paginate_by': paginate_by,
+    }
+    return render(request, 'chefprofile/view_chefprofile.html', context)
 
 
 @login_required
@@ -65,32 +72,8 @@ def new_cookbook(request):
             )+str(request.user.pk)
             Cookbook.save()
             messages.success(request, 'NEW COOKBOOK ADDED!')
-            return redirect('chefprofile/view_chefprofile')
+            return redirect('view_chefprofile')
         else:
             cookbook_form = NewDishForm()
     cookbook_form = NewCookbookForm()
     return render(request, 'chefprofile/new_cookbook.html', {'cookbook_form': cookbook_form})
-
-
-"""
-def edit_chefprofile(request):
-    chefprofile = get_object_or_404(ChefProfile, user=request.user)
-    context = dict( backend_form = ChefProfileForm())
-
-    if request.method == 'POST':
-        chef_form = ChefProfileForm(request.POST, request.FILES)
-        context['posted'] = chef_form.instance
-        if chef_form.is_valid():
-            chef_form.save()
-            ret = dict(photo_id=chef_form.instance.id)
-            messages.success(request, 'Profile updated successfully')
-            return render(request, 'chefprofile/edit_chefprofile.html', context)
-        else:
-            messages.error(request,
-                           ('Update failed. Please ensure '
-                            'the form is valid.'))
-            return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
-    else:
-        chef_form = ChefProfileForm(instance=chefprofile)
-        return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
-"""

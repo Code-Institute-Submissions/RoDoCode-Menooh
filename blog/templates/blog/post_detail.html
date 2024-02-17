@@ -36,16 +36,21 @@
                         </div>
                     </div>
                     <div class="row justify-content-end me-1 mt-1 mb-3">
-                        <form method="post">
+                        <form method="post"  action="">
                         <div class="col-auto mx-1 my-1 d-inline">
                             <div class="d-inline">
-                                    {% csrf_token %}
-                                    {{ form.as_p }}
+                                {% csrf_token %}
+                                <label for="cookbook">Choose a Cookbook:</label>
+                                <select name="cookbook_id" id="cookbook">
+                                  {% for cookbook in cookbooks %}
+                                    <option value="{{ cookbook.id }}">{{ cookbook.title }}</option>
+                                  {% endfor %}
+                                </select>
                             </div>
                         </div>
                         <div class="col-auto mx-1 my-1 d-inline my-auto">
                             <div class="d-inline">
-                                <button type="submit" name="save_to_cookbook" class="btn btn-success btn-rounded">Save</button>
+                                <button type="submit" name="save_to_cookbook" class="btn btn-success btn-rounded">Save to Cookbook</button>
                             </div>
                         </div>
                         </form>
