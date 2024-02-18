@@ -97,6 +97,7 @@ url 'account_logout' as logout_url %} -->
                         </ul>
                     </div>
                 </div>
+                {% if user.is_authenticated %}
                 <div class="col-auto mt-1">
                     <div class="input-group" id="searchbar">
                         <input type="search" class="form-control" id="nav-search-input" placeholder="Search for...">
@@ -105,6 +106,7 @@ url 'account_logout' as logout_url %} -->
                         </span>
                     </div>
                 </div>
+                {% endif %}
                 {% if user.is_authenticated %}
                 <div class="col-auto justify-content-end my-auto">
                     <div class="d-inline me-1">
