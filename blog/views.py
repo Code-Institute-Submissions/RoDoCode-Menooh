@@ -105,7 +105,7 @@ def comment_delete(request, slug, comment_id):
 
 def cookbook_contents(request, slug):
     cookbook = get_object_or_404(Cookbook, slug=slug)
-    dishes = Cookbook.dishes.objects.all()
+    dishes = cookbook.dishes.all()
     context = { 'dishes': dishes, 'cookbook': cookbook, }
     return render(request, 'blog/cookbook_contents.html', context)
 
@@ -132,4 +132,4 @@ def cookbook_delete(request, slug, cookbook_id):
     else:
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own cookbooks!')
-    return HttpResponseRedirect(reverse('view_chefprofile', args=[slug]))
+    return HttpResponseRedirect(reverse('view_chefprofile'))

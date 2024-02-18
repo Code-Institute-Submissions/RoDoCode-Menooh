@@ -149,11 +149,11 @@ url 'account_logout' as logout_url %} -->
     <main class="flex-shrink-0 main-bg mx-auto mb-5" id="loginmessage">
       <!-- displaying Django messages -->
       <div class="container text-center" id="message-alert-head">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
+        <div class="row justify-content-center">
+          <div class="col-md-5">
             {% for message in messages %}
             <div
-              class="alert {{ message.tags }} alert-dismissible
+              class="alert alert-{{ message.tags }} alert-dismissible
               fade show"
               id="msg"
               role="alert"
@@ -170,11 +170,30 @@ url 'account_logout' as logout_url %} -->
           </div>
         </div>
       </div>
-      {% if user.is_authenticated %}
-      <p class="text-end me-5 pe-5" id="auth-message">You are logged in as {{ user }}</p>
-      {% else %}
-      <p class="text-end me-5 pe-5" id="auth-message">You are not logged in</p>
-      {% endif %} 
+      
+      <div class="container text-center" id="message-alert-head">
+        <div class="row justify-content-end">
+          <div class="col-md-5">
+            <div class="alert alert-info alert-dismissible fade show" id="msg" role="alert">
+              {% if user.is_authenticated %}
+              <p class="text-center m-0" id="auth-message">You are logged in as {{ user }} <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button></p>
+              {% else %}
+              <p class="text-center m-0" id="auth-message">You are not logged in <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button></p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div> 
 
       {% block content %}
       <!-- Content Goes here -->

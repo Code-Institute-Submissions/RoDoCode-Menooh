@@ -93,7 +93,7 @@
     {% endif %}
 </div>
 
-{% endif %} {% if user.is_authenticated and cookbook.collector == user %}
+{% if user.is_authenticated and cookbook.collector == user %}
 <button class="btn btn-delete" cookbook_id="{{ cookbook.id }}">
     Delete
 </button>
