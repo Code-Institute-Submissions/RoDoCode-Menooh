@@ -17,13 +17,13 @@
                     {% if user.is_authenticated and post.author == user %}
                     <div class="post-save-flash" style="z-index:1000;">
                         <div class="d-inline">
-                            <button class="btn btn-delete" comment_id="{{ comment.id }}">
+                            <button class="btn btn-delete btn-rounded btn-md" comment_id="{{ comment.id }}">
                                 Delete
                             </button>
                         </div>
                         <div class="d-inline">
                             <a class="mx-auto text-center justify-content-center" href="{% url 'edit_post' slug=post.slug %}">
-                                <button type="button" class="btn btn-success btn-rounded btn-md">
+                                <button type="button" class="btn btn-edit btn-rounded btn-md">
                                     Edit
                                 </button>
                             </a>
@@ -140,10 +140,10 @@
                         {% endif %} {% if user.is_authenticated and comment.author == user %}
                         <div class="row">
                             <div class="col-auto">
-                                <button class="btn btn-delete" comment_id="{{ comment.id }}">
+                                <button class="btn btn-delete btn-rounded btn-md" comment_id="{{ comment.id }}">
                                     Delete
                                 </button>
-                                <button class="btn btn-edit" comment_id="{{ comment.id }}">
+                                <button class="btn btn-edit btn-rounded btn-md" comment_id="{{ comment.id }}">
                                     Edit
                                 </button>
                             </div>
@@ -180,14 +180,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-rounded btn-md" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     Are you sure you want to delete your comment? This action cannot be
                     undone.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secondary btn-rounded btn-md" data-bs-dismiss="modal">
                         Close
                     </button>
                     <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
@@ -202,14 +202,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-rounded btn-md" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     Are you sure you want to delete your recipe? This action cannot be
                     undone.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secondary btn-rounded btn-md" data-bs-dismiss="modal">
                         Close
                     </button>
                     <a id="deletePostConfirm" href="#" class="btn btn-danger">Delete</a>

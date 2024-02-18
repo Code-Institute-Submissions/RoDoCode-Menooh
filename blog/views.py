@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from .models import Post, Comment, Cookbook
 from .forms import CommentForm
+from chefprofile.forms import NewDishForm
 from chefprofile.forms import NewCookbookForm
 import random
 from django.views.decorators.http import require_POST

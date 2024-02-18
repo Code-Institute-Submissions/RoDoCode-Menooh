@@ -4,15 +4,13 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-11">
-      <h2>Edit Your Cookbook!</h2>
+      <h2>Edit Your Recipe!</h2>
       <p>
-        Personalise it and make it perfect!
+        Every detail helps other users create the same magic.
       </p>
 
-      <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
       <form method="post" enctype="multipart/form-data">
-        {{ cookbook_form | crispy }} {% csrf_token %}
+        {{ post_form | crispy }} {% csrf_token %}
         <button class="btn btn-secondary btn-rounded btn-md" type="submit">Save</button>
       </form>
     </div>

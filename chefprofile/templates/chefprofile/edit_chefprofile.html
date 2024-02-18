@@ -31,11 +31,9 @@
         like? Who do you think of when you cook? What inspires your cooking?
       </p>
 
-      <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
       <form method="post" enctype="multipart/form-data">
         {{ chef_form | crispy }} {% csrf_token %}
-        <button class="btn btn-secondary" type="submit">Save</button>
+        <button class="btn btn-secondary btn-rounded btn-md" type="submit">Save</button>
       </form>
     </div>
   </div>
