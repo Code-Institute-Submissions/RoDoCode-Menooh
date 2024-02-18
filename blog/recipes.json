@@ -1,0 +1,418 @@
+[
+    {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Savory Mushroom Risotto",
+        "slug": "savory-mushroom-risotto",
+        "author": 1,
+        "featured_image": "image/upload/risotto-image",
+        "content": "<p>Heat olive oil in a large skillet over medium heat. Add chopped onions and minced garlic, sauté until softened, about 2-3 minutes.</p><p>Add Arborio rice to the skillet, stirring constantly until rice is lightly toasted, about 2 minutes.</p><p>Slowly pour in warm vegetable broth, about 1/2 cup at a time, stirring frequently until absorbed.</p><p>Once all broth is absorbed and rice is creamy and tender, stir in sliced mushrooms, grated Parmesan cheese, and chopped parsley. Cook until mushrooms are tender, about 5 minutes.</p><p>Season with salt and black pepper to taste. Serve hot, garnished with extra Parmesan cheese and parsley.</p>",
+        "ingredients": "<p>1 1/2 cups Arborio rice<br>4 cups warm vegetable broth<br>1 cup sliced mushrooms<br>1/2 cup grated Parmesan cheese<br>2 tbsp olive oil<br>1 onion, chopped<br>3 cloves garlic, minced<br>2 tbsp chopped fresh parsley<br>Salt and black pepper to taste</p>",
+        "created_on": "2024-02-13T12:00:00.000Z",
+        "status": 1,
+        "excerpt": "Savor the creamy goodness of mushroom risotto with this easy-to-make recipe.",
+        "updated_on": "2024-02-13T12:00:00.000Z",
+        "category": 30
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Creamy Spinach and Artichoke Dip",
+        "slug": "creamy-spinach-artichoke-dip",
+        "author": 3,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>Preheat oven to 350°F. In a large bowl, mix together cream cheese, mayonnaise, sour cream, minced garlic, chopped spinach, chopped artichoke hearts, shredded mozzarella cheese, and grated Parmesan cheese.</p><p>Transfer the mixture to a baking dish and smooth the top. Sprinkle additional mozzarella and Parmesan cheese on top.</p><p>Bake in the preheated oven until bubbly and golden brown, about 25-30 minutes.</p><p>Remove from the oven and let it cool slightly before serving. Enjoy with tortilla chips, crackers, or bread slices!</p>",
+        "ingredients": "<p>8 oz cream cheese, softened<br>1/2 cup mayonnaise<br>1/2 cup sour cream<br>3 cloves garlic, minced<br>1 cup chopped spinach, cooked and drained<br>1 cup chopped artichoke hearts, drained<br>1 cup shredded mozzarella cheese, plus extra for topping<br>1/2 cup grated Parmesan cheese, plus extra for topping</p>",
+        "created_on": "2023-07-15T10:45:00.000Z",
+        "status": 1,
+        "excerpt": "Indulge in the rich and creamy goodness of this spinach and artichoke dip.",
+        "updated_on": "2023-11-28T18:20:00.000Z",
+        "category": 31
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Decadent Chocolate Lava Cake",
+        "slug": "decadent-chocolate-lava-cake",
+        "author": 4,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>Preheat oven to 425°F. Grease four ramekins and dust with cocoa powder.</p><p>In a microwave-safe bowl, melt butter and chopped semi-sweet chocolate in 30-second intervals until smooth. Stir in powdered sugar, eggs, egg yolks, vanilla extract, and flour until well combined.</p><p>Divide the batter evenly among the prepared ramekins. Place a chocolate truffle in the center of each ramekin.</p><p>Bake in the preheated oven for 12-14 minutes, until the edges are set but the center is still soft.</p><p>Remove from the oven and let it cool for a minute. Carefully run a knife around the edges to loosen the cakes. Invert onto serving plates and serve immediately, garnished with powdered sugar and fresh berries if desired.</p>",
+        "ingredients": "<p>1/2 cup unsalted butter<br>4 oz semi-sweet chocolate, chopped<br>1 cup powdered sugar<br>2 large eggs<br>2 large egg yolks<br>1 tsp vanilla extract<br>1/4 cup all-purpose flour<br>4 chocolate truffles</p>",
+        "created_on": "2023-04-20T16:30:00.000Z",
+        "status": 1,
+        "excerpt": "Indulge in the rich and gooey center of this irresistible chocolate lava cake.",
+        "updated_on": "2023-09-10T14:15:00.000Z",
+        "category": 15
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Creamy Tomato Basil Soup",
+        "slug": "creamy-tomato-basil-soup",
+        "author": 7,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>In a large pot, heat olive oil over medium heat. Add chopped onions, carrots, and celery. Cook until softened, about 5-7 minutes.</p><p>Add crushed tomatoes, vegetable broth, sugar, dried basil, dried oregano, and bay leaves. Bring to a boil, then reduce heat and simmer for 20-25 minutes.</p><p>Remove bay leaves. Using an immersion blender, blend the soup until smooth. Stir in heavy cream and chopped fresh basil. Season with salt and black pepper to taste.</p><p>Serve hot, garnished with a drizzle of cream and fresh basil leaves.</p>",
+        "ingredients": "<p>2 tbsp olive oil<br>1 onion, chopped<br>2 carrots, peeled and chopped<br>2 stalks celery, chopped<br>2 cans (28 oz each) crushed tomatoes<br>4 cups vegetable broth<br>1 tsp sugar<br>1 tsp dried basil<br>1/2 tsp dried oregano<br>2 bay leaves<br>1/2 cup heavy cream<br>1/4 cup chopped fresh basil<br>Salt and black pepper to taste</p>",
+        "created_on": "2023-09-05T11:00:00.000Z",
+        "status": 1,
+        "excerpt": "Warm up with a bowl of comforting creamy tomato basil soup, perfect for any chilly day.",
+        "updated_on": "2023-11-20T09:30:00.000Z",
+        "category": 5
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Classic Margherita Pizza",
+        "slug": "classic-margherita-pizza",
+        "author": 2,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>Preheat oven to 500°F (or as high as your oven will go) with a pizza stone inside if available.</p><p>Roll out pizza dough on a lightly floured surface to desired thickness. Transfer to a pizza peel or parchment paper.</p><p>Spread pizza sauce evenly over the dough, leaving a small border. Arrange sliced tomatoes and fresh mozzarella slices on top.</p><p>Transfer pizza to the preheated oven and bake for 10-12 minutes, until crust is golden brown and cheese is bubbly and melted.</p><p>Remove from the oven, sprinkle with fresh basil leaves, drizzle with olive oil, and season with salt and black pepper to taste.</p>",
+        "ingredients": "<p>1 lb pizza dough, at room temperature<br>1/2 cup pizza sauce<br>2 ripe tomatoes, thinly sliced<br>8 oz fresh mozzarella cheese, thinly sliced<br>Handful of fresh basil leaves<br>Extra virgin olive oil<br>Salt and black pepper to taste</p>",
+        "created_on": "2023-01-15T15:45:00.000Z",
+        "status": 1,
+        "excerpt": "Experience the authentic flavors of Italy with this classic Margherita pizza recipe.",
+        "updated_on": "2023-05-30T08:20:00.000Z",
+        "category": 8
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Spicy Thai Red Curry",
+        "slug": "spicy-thai-red-curry",
+        "author": 8,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>In a large skillet or wok, heat vegetable oil over medium heat. Add red curry paste and cook for 1-2 minutes, until fragrant.</p><p>Add sliced chicken breast and cook until browned on all sides, about 5 minutes.</p><p>Stir in coconut milk, chicken broth, fish sauce, brown sugar, sliced bell peppers, bamboo shoots, and Thai basil leaves. Simmer for 10-15 minutes, until the chicken is cooked through and the sauce has thickened.</p><p>Serve hot over steamed jasmine rice, garnished with fresh cilantro and lime wedges.</p>",
+        "ingredients": "<p>2 tbsp vegetable oil<br>3 tbsp red curry paste<br>1 lb boneless, skinless chicken breast, thinly sliced<br>1 can (14 oz) coconut milk<br>1 cup chicken broth<br>2 tbsp fish sauce<br>1 tbsp brown sugar<br>1 red bell pepper, thinly sliced<br>1 green bell pepper, thinly sliced<br>1 cup bamboo shoots<br>1/4 cup Thai basil leaves<br>Fresh cilantro and lime wedges for garnish</p>",
+        "created_on": "2023-03-10T13:15:00.000Z",
+        "status": 1,
+        "excerpt": "Take your taste buds on a journey to Thailand with this aromatic and spicy red curry.",
+        "updated_on": "2023-07-25T17:10:00.000Z",
+        "category": 20
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Blueberry Lemon Cheesecake Bars",
+        "slug": "blueberry-lemon-cheesecake-bars",
+        "author": 9,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>Preheat oven to 350°F. Line a 9x9-inch baking pan with parchment paper, leaving an overhang on the sides for easy removal.</p><p>In a medium bowl, mix together graham cracker crumbs, melted butter, and sugar until well combined. Press the mixture into the bottom of the prepared pan.</p><p>In a large bowl, beat cream cheese until smooth. Add sugar, eggs, lemon juice, and lemon zest, and beat until creamy and well combined.</p><p>Pour the cheesecake mixture over the crust and spread evenly. Dollop blueberry pie filling on top and swirl gently with a knife.</p><p>Bake for 25-30 minutes, until the edges are set but the center is slightly jiggly.</p><p>Let it cool completely in the pan on a wire rack. Chill in the refrigerator for at least 2 hours before cutting into bars. Serve chilled and enjoy!</p>",
+        "ingredients": "<p>1 1/2 cups graham cracker crumbs<br>1/3 cup unsalted butter, melted<br>1/4 cup granulated sugar<br>16 oz cream cheese, softened<br>1/2 cup granulated sugar<br>2 large eggs<br>2 tbsp fresh lemon juice<br>1 tbsp lemon zest<br>1 cup blueberry pie filling</p>",
+        "created_on": "2023-06-20T12:30:00.000Z",
+        "status": 1,
+        "excerpt": "Indulge in the perfect combination of sweet and tangy with these blueberry lemon cheesecake bars.",
+        "updated_on": "2023-10-15T11:05:00.000Z",
+        "category": 12
+    }
+},
+
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+        "title": "Garlic Herb Roasted Chicken",
+        "slug": "garlic-herb-roasted-chicken",
+        "author": 6,
+        "featured_image": "image/upload/placeholder",
+        "content": "<p>Preheat oven to 425°F. Rinse the chicken under cold water and pat dry with paper towels. Place the chicken in a roasting pan.</p><p>In a small bowl, mix together minced garlic, chopped fresh herbs (such as rosemary, thyme, and parsley), olive oil, salt, and black pepper. Rub the mixture all over the chicken, including under the skin.</p><p>Place lemon slices and whole garlic cloves inside the chicken cavity. Tie the legs together with kitchen twine.</p><p>Roast the chicken in the preheated oven for 1 hour to 1 hour and 15 minutes, or until the internal temperature reaches 165°F when tested with a meat thermometer.</p><p>Remove from the oven and let it rest for 10-15 minutes before carving. Serve hot with your favorite side dishes.</p>",
+        "ingredients": "<p>1 whole chicken (about 4-5 lbs)<br>6 cloves garlic, minced<br>2 tbsp chopped fresh herbs (rosemary, thyme, parsley)<br>2 tbsp olive oil<br>1 tsp salt<br>1/2 tsp black pepper<br>1 lemon, sliced<br>6 whole garlic cloves<br>Kitchen twine</p>",
+        "created_on": "2023-02-15T14:00:00.000Z",
+        "status": 1,
+        "excerpt": "Enjoy the succulent flavors of tender garlic herb roasted chicken, perfect for any dinner occasion.",
+        "updated_on": "2023-08-05T09:50:00.000Z",
+        "category": 7
+    }
+},
+{
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Pesto Pasta Salad",
+      "slug": "pesto-pasta-salad",
+      "author": 3,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Cook pasta according to package instructions until al dente. Drain and rinse with cold water to stop the cooking process.</p><p>In a large bowl, combine cooked pasta, pesto sauce, halved cherry tomatoes, diced mozzarella cheese, sliced black olives, and chopped fresh basil. Toss until well coated.</p><p>Chill in the refrigerator for at least 1 hour before serving. Serve cold as a refreshing side dish or light meal.</p>",
+      "ingredients": "<p>8 oz pasta (such as fusilli or penne)<br>1/2 cup pesto sauce<br>1 cup cherry tomatoes, halved<br>1 cup mozzarella cheese, diced<br>1/4 cup black olives, sliced<br>2 tbsp fresh basil, chopped</p>",
+      "created_on": "2023-08-10T11:30:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy the vibrant flavors of this refreshing pesto pasta salad, perfect for picnics and potlucks.",
+      "updated_on": "2023-12-25T10:15:00.000Z",
+      "category": 18
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Crispy Baked Chicken Tenders",
+      "slug": "crispy-baked-chicken-tenders",
+      "author": 5,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 425°F. Line a baking sheet with parchment paper.</p><p>In a shallow dish, mix together breadcrumbs, grated Parmesan cheese, garlic powder, paprika, salt, and black pepper.</p><p>In another shallow dish, beat eggs with a splash of milk.</p><p>Dip chicken tenders into the egg mixture, then coat with the breadcrumb mixture. Place on the prepared baking sheet.</p><p>Bake for 15-20 minutes, turning halfway through, until golden brown and cooked through.</p><p>Serve hot with your favorite dipping sauce.</p>",
+      "ingredients": "<p>1 lb chicken tenders<br>1 cup breadcrumbs<br>1/4 cup grated Parmesan cheese<br>1 tsp garlic powder<br>1 tsp paprika<br>1/2 tsp salt<br>1/4 tsp black pepper<br>2 eggs<br>Splash of milk</p>",
+      "created_on": "2023-05-20T13:45:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy crispy and flavorful baked chicken tenders, a healthier alternative to fried chicken.",
+      "updated_on": "2023-09-10T12:00:00.000Z",
+      "category": 9
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Mango Coconut Smoothie Bowl",
+      "slug": "mango-coconut-smoothie-bowl",
+      "author": 8,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>In a blender, combine frozen mango chunks, coconut milk, Greek yogurt, honey, and lime juice. Blend until smooth and creamy.</p><p>Pour the smoothie into a bowl. Top with sliced fresh mango, shredded coconut, granola, and chia seeds.</p><p>Enjoy immediately with a spoon!</p>",
+      "ingredients": "<p>1 cup frozen mango chunks<br>1/2 cup coconut milk<br>1/4 cup Greek yogurt<br>1 tbsp honey<br>1 tbsp lime juice<br>Sliced fresh mango, shredded coconut, granola, and chia seeds for topping</p>",
+      "created_on": "2023-07-01T10:00:00.000Z",
+      "status": 1,
+      "excerpt": "Start your day with a tropical twist with this refreshing mango coconut smoothie bowl.",
+      "updated_on": "2023-11-18T09:30:00.000Z",
+      "category": 6
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Vegetarian Quinoa Stuffed Bell Peppers",
+      "slug": "vegetarian-quinoa-stuffed-bell-peppers",
+      "author": 9,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 375°F. Cut the tops off bell peppers and remove seeds and membranes.</p><p>In a medium saucepan, bring vegetable broth to a boil. Stir in quinoa, reduce heat, cover, and simmer for 15 minutes, until quinoa is cooked and broth is absorbed.</p><p>In a large skillet, heat olive oil over medium heat. Add chopped onions, minced garlic, diced zucchini, diced tomatoes, corn kernels, black beans, cooked quinoa, chili powder, cumin, and salt. Cook for 5-7 minutes, until vegetables are softened.</p><p>Stuff each bell pepper with the quinoa mixture. Place stuffed peppers in a baking dish and cover with aluminum foil.</p><p>Bake in the preheated oven for 25-30 minutes, until peppers are tender.</p><p>Serve hot, garnished with chopped fresh cilantro and a dollop of sour cream if desired.</p>",
+      "ingredients": "<p>4 bell peppers, any color<br>1 cup vegetable broth<br>1/2 cup quinoa<br>1 tbsp olive oil<br>1 onion, chopped<br>3 cloves garlic, minced<br>1 zucchini, diced<br>1 tomato, diced<br>1/2 cup corn kernels<br>1/2 cup black beans, drained and rinsed<br>1 tsp chili powder<br>1/2 tsp cumin<br>1/2 tsp salt<br>Chopped fresh cilantro and sour cream for garnish</p>",
+      "created_on": "2023-03-25T14:30:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy a healthy and flavorful meal with these vegetarian quinoa stuffed bell peppers.",
+      "updated_on": "2023-08-15T10:45:00.000Z",
+      "category": 14
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Teriyaki Salmon with Sesame Broccoli",
+      "slug": "teriyaki-salmon-sesame-broccoli",
+      "author": 10,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 400°F. Line a baking sheet with parchment paper.</p><p>Place salmon fillets on the prepared baking sheet. Brush each fillet with teriyaki sauce and sprinkle with sesame seeds.</p><p>In a bowl, toss broccoli florets with olive oil, soy sauce, minced garlic, and sesame oil. Spread broccoli on the baking sheet around the salmon.</p><p>Bake for 15-20 minutes, until salmon is cooked through and flakes easily with a fork, and broccoli is tender and lightly browned.</p><p>Serve hot with cooked rice or quinoa.</p>",
+      "ingredients": "<p>4 salmon fillets<br>1/4 cup teriyaki sauce<br>2 tbsp sesame seeds<br>4 cups broccoli florets<br>2 tbsp olive oil<br>1 tbsp soy sauce<br>2 cloves garlic, minced<br>1 tsp sesame oil</p>",
+      "created_on": "2023-09-20T13:00:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy a delicious and nutritious meal with this easy teriyaki salmon and sesame broccoli recipe.",
+      "updated_on": "2023-12-05T11:20:00.000Z",
+      "category": 19
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Teriyaki Salmon with Sesame Broccoli",
+      "slug": "teriyaki-salmon-sesame-broccoli",
+      "author": 10,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 400°F. Line a baking sheet with parchment paper.</p><p>Place salmon fillets on the prepared baking sheet. Brush each fillet with teriyaki sauce and sprinkle with sesame seeds.</p><p>In a bowl, toss broccoli florets with olive oil, soy sauce, minced garlic, and sesame oil. Spread broccoli on the baking sheet around the salmon.</p><p>Bake for 15-20 minutes, until salmon is cooked through and flakes easily with a fork, and broccoli is tender and lightly browned.</p><p>Serve hot with cooked rice or quinoa.</p>",
+      "ingredients": "<p>4 salmon fillets<br>1/4 cup teriyaki sauce<br>2 tbsp sesame seeds<br>4 cups broccoli florets<br>2 tbsp olive oil<br>1 tbsp soy sauce<br>2 cloves garlic, minced<br>1 tsp sesame oil</p>",
+      "created_on": "2023-09-20T13:00:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy a delicious and nutritious meal with this easy teriyaki salmon and sesame broccoli recipe.",
+      "updated_on": "2023-12-05T11:20:00.000Z",
+      "category": 19
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Classic Beef Lasagna",
+      "slug": "classic-beef-lasagna",
+      "author": 1,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 375°F. Cook lasagna noodles according to package instructions until al dente. Drain and set aside.</p><p>In a large skillet, cook ground beef over medium heat until browned. Drain excess fat. Stir in crushed tomatoes, tomato sauce, tomato paste, Italian seasoning, garlic powder, salt, and black pepper. Simmer for 10-15 minutes, stirring occasionally.</p><p>In a bowl, mix together ricotta cheese, egg, chopped fresh parsley, salt, and black pepper.</p><p>Spread a thin layer of meat sauce on the bottom of a 9x13-inch baking dish. Arrange a single layer of lasagna noodles on top. Spread half of the ricotta mixture over the noodles, followed by a layer of meat sauce and shredded mozzarella cheese. Repeat layers.</p><p>Cover the baking dish with aluminum foil and bake for 25-30 minutes. Remove foil and bake for an additional 10 minutes, until cheese is bubbly and lightly browned.</p><p>Let it cool for a few minutes before slicing and serving. Enjoy!</p>",
+      "ingredients": "<p>12 lasagna noodles<br>1 lb ground beef<br>1 can (28 oz) crushed tomatoes<br>1 can (15 oz) tomato sauce<br>2 tbsp tomato paste<br>1 tbsp Italian seasoning<br>1 tsp garlic powder<br>Salt and black pepper to taste<br>16 oz ricotta cheese<br>1 egg<br>2 tbsp fresh parsley, chopped<br>2 cups shredded mozzarella cheese</p>",
+      "created_on": "2023-02-10T12:15:00.000Z",
+      "status": 1,
+      "excerpt": "Indulge in the ultimate comfort food with this classic beef lasagna recipe, perfect for family dinners.",
+      "updated_on": "2023-06-25T09:40:00.000Z",
+      "category": 3
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Chicken and Vegetable Stir-Fry",
+      "slug": "chicken-vegetable-stir-fry",
+      "author": 2,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>In a wok or large skillet, heat vegetable oil over high heat. Add thinly sliced chicken breast and cook until browned and cooked through, about 5-7 minutes. Remove from the skillet and set aside.</p><p>In the same skillet, add more vegetable oil if needed. Add sliced bell peppers, sliced carrots, broccoli florets, and snow peas. Stir-fry for 3-4 minutes, until vegetables are crisp-tender.</p><p>Return cooked chicken to the skillet. Add minced garlic, grated ginger, soy sauce, hoisin sauce, and sesame oil. Stir-fry for another 2-3 minutes, until everything is heated through and well combined.</p><p>Serve hot over cooked rice or noodles.</p>",
+      "ingredients": "<p>1 lb chicken breast, thinly sliced<br>2 tbsp vegetable oil, divided<br>1 red bell pepper, thinly sliced<br>1 yellow bell pepper, thinly sliced<br>1 carrot, thinly sliced<br>1 cup broccoli florets<br>1 cup snow peas, trimmed<br>2 cloves garlic, minced<br>1 tsp grated ginger<br>3 tbsp soy sauce<br>2 tbsp hoisin sauce<br>1 tsp sesame oil</p>",
+      "created_on": "2023-04-05T10:30:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy a quick and flavorful meal with this chicken and vegetable stir-fry, perfect for busy weeknights.",
+      "updated_on": "2023-08-20T08:00:00.000Z",
+      "category": 17
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Raspberry White Chocolate Muffins",
+      "slug": "raspberry-white-chocolate-muffins",
+      "author": 4,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 375°F. Line a muffin tin with paper liners.</p><p>In a large bowl, whisk together flour, sugar, baking powder, and salt.</p><p>In another bowl, whisk together milk, melted butter, egg, and vanilla extract.</p><p>Add wet ingredients to dry ingredients and stir until just combined. Gently fold in fresh raspberries and white chocolate chips.</p><p>Divide batter evenly among muffin cups, filling each about 2/3 full.</p><p>Bake for 18-20 minutes, until golden brown and a toothpick inserted into the center comes out clean.</p><p>Let muffins cool in the pan for 5 minutes before transferring to a wire rack to cool completely.</p>",
+      "ingredients": "<p>2 cups all-purpose flour<br>1/2 cup granulated sugar<br>2 tsp baking powder<br>1/2 tsp salt<br>1 cup milk<br>1/2 cup unsalted butter, melted<br>1 egg<br>1 tsp vanilla extract<br>1 cup fresh raspberries<br>1/2 cup white chocolate chips</p>",
+      "created_on": "2023-10-10T14:45:00.000Z",
+      "status": 1,
+      "excerpt": "Indulge in the perfect combination of tart raspberries and sweet white chocolate with these delicious muffins.",
+      "updated_on": "2023-12-30T13:20:00.000Z",
+      "category": 23
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Shrimp Scampi Pasta",
+      "slug": "shrimp-scampi-pasta",
+      "author": 6,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Cook pasta according to package instructions until al dente. Drain and set aside.</p><p>In a large skillet, heat olive oil over medium heat. Add minced garlic and red pepper flakes. Cook for 1 minute, until fragrant.</p><p>Add shrimp to the skillet and cook until pink and opaque, about 2-3 minutes per side. Remove shrimp from the skillet and set aside.</p><p>Add white wine to the skillet and simmer for 2 minutes, scraping up any browned bits from the bottom of the pan. Stir in lemon juice and chicken broth. Simmer for 5 minutes, until slightly reduced.</p><p>Return cooked pasta and shrimp to the skillet. Add chopped parsley and grated Parmesan cheese. Toss until everything is well coated and heated through.</p><p>Serve hot with additional Parmesan cheese and lemon wedges.</p>",
+      "ingredients": "<p>8 oz pasta (such as spaghetti or linguine)<br>2 tbsp olive oil<br>4 cloves garlic, minced<br>1/2 tsp red pepper flakes<br>1 lb large shrimp, peeled and deveined<br>1/2 cup white wine<br>2 tbsp lemon juice<br>1/2 cup chicken broth<br>2 tbsp chopped fresh parsley<br>1/4 cup grated Parmesan cheese</p>",
+      "created_on": "2023-06-15T16:00:00.000Z",
+      "status": 1,
+      "excerpt": "Savor the flavors of this elegant shrimp scampi pasta, perfect for a special dinner.",
+      "updated_on": "2023-10-25T11:30:00.000Z",
+      "category": 11
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Mushroom Risotto",
+      "slug": "mushroom-risotto",
+      "author": 7,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>In a large saucepan, heat olive oil over medium heat. Add diced onion and minced garlic. Cook until softened, about 3-4 minutes.</p><p>Add sliced mushrooms to the saucepan and cook until they release their liquid and start to brown, about 5-7 minutes.</p><p>Stir in Arborio rice and cook for 1-2 minutes, until rice is coated with oil and slightly translucent.</p><p>Gradually add hot vegetable broth, 1/2 cup at a time, stirring frequently and allowing the liquid to be absorbed before adding more.</p><p>Continue cooking and stirring until the rice is creamy and tender, about 20-25 minutes. Stir in grated Parmesan cheese and chopped fresh parsley.</p><p>Serve hot, garnished with additional Parmesan cheese and parsley if desired.</p>",
+      "ingredients": "<p>2 tbsp olive oil<br>1 onion, diced<br>3 cloves garlic, minced<br>8 oz mushrooms, sliced<br>1 1/2 cups Arborio rice<br>4 cups hot vegetable broth<br>1/2 cup grated Parmesan cheese, plus extra for garnish<br>2 tbsp chopped fresh parsley, plus extra for garnish</p>",
+      "created_on": "2023-01-30T15:30:00.000Z",
+      "status": 1,
+      "excerpt": "Indulge in the creamy and savory goodness of this classic mushroom risotto, perfect for any occasion.",
+      "updated_on": "2023-05-20T10:15:00.000Z",
+      "category": 2
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Banana Walnut Bread",
+      "slug": "banana-walnut-bread",
+      "author": 9,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Preheat oven to 350°F. Grease a 9x5-inch loaf pan.</p><p>In a large bowl, mash ripe bananas with a fork. Stir in melted butter, sugar, egg, and vanilla extract until well combined.</p><p>In another bowl, whisk together flour, baking powder, baking soda, salt, and cinnamon.</p><p>Add dry ingredients to wet ingredients and mix until just combined. Fold in chopped walnuts.</p><p>Pour batter into the prepared loaf pan. Bake for 50-60 minutes, until a toothpick inserted into the center comes out clean.</p><p>Let banana bread cool in the pan for 10 minutes before transferring to a wire rack to cool completely.</p>",
+      "ingredients": "<p>3 ripe bananas<br>1/2 cup unsalted butter, melted<br>3/4 cup granulated sugar<br>1 egg<br>1 tsp vanilla extract<br>1 1/2 cups all-purpose flour<br>1 tsp baking powder<br>1/2 tsp baking soda<br>1/4 tsp salt<br>1 tsp ground cinnamon<br>1/2 cup chopped walnuts</p>",
+      "created_on": "2023-03-05T13:00:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy the irresistible aroma and flavor of homemade banana walnut bread, perfect for breakfast or snacking.",
+      "updated_on": "2023-07-20T11:45:00.000Z",
+      "category": 21
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Caprese Salad with Balsamic Glaze",
+      "slug": "caprese-salad-balsamic-glaze",
+      "author": 3,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Arrange sliced tomatoes and fresh mozzarella cheese on a serving platter in alternating layers.</p><p>Tuck fresh basil leaves between the tomato and mozzarella slices.</p><p>Drizzle balsamic glaze over the salad. Season with salt and black pepper to taste.</p><p>Serve immediately as a refreshing appetizer or side dish.</p>",
+      "ingredients": "<p>4 large tomatoes, sliced<br>8 oz fresh mozzarella cheese, sliced<br>Fresh basil leaves<br>Balsamic glaze<br>Salt and black pepper to taste</p>",
+      "created_on": "2023-08-20T12:45:00.000Z",
+      "status": 1,
+      "excerpt": "Savor the classic flavors of Italy with this simple yet elegant Caprese salad drizzled with balsamic glaze.",
+      "updated_on": "2023-11-10T10:30:00.000Z",
+      "category": 5
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Spaghetti Carbonara",
+      "slug": "spaghetti-carbonara",
+      "author": 8,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Cook spaghetti according to package instructions until al dente. Drain, reserving 1/2 cup of pasta water.</p><p>In a large skillet, cook chopped bacon over medium heat until crispy. Remove bacon from the skillet and drain on paper towels, leaving the rendered fat in the skillet.</p><p>In a bowl, whisk together eggs, grated Parmesan cheese, and black pepper.</p><p>Add cooked spaghetti to the skillet with the rendered bacon fat. Toss to coat the pasta in the fat.</p><p>Remove skillet from heat and quickly pour in the egg mixture, tossing continuously to coat the spaghetti. Add reserved pasta water as needed to create a creamy sauce.</p><p>Return cooked bacon to the skillet and toss to combine. Serve hot with additional grated Parmesan cheese and black pepper.</p>",
+      "ingredients": "<p>8 oz spaghetti<br>6 slices bacon, chopped<br>2 eggs<br>1/2 cup grated Parmesan cheese, plus extra for serving<br>1/2 tsp black pepper</p>",
+      "created_on": "2023-04-10T15:15:00.000Z",
+      "status": 1,
+      "excerpt": "Indulge in the creamy and savory goodness of spaghetti carbonara, a classic Italian pasta dish.",
+      "updated_on": "2023-09-05T12:20:00.000Z",
+      "category": 8
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Honey Glazed Carrots",
+      "slug": "honey-glazed-carrots",
+      "author": 10,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>Bring a pot of salted water to a boil. Add baby carrots and cook for 5-7 minutes, until just tender. Drain and set aside.</p><p>In a skillet, melt butter over medium heat. Add cooked carrots, honey, and a pinch of salt. Cook, stirring occasionally, until carrots are coated and glazed, about 3-4 minutes.</p><p>Transfer honey glazed carrots to a serving dish. Garnish with chopped fresh parsley if desired.</p><p>Serve hot as a delightful side dish.</p>",
+      "ingredients": "<p>1 lb baby carrots<br>2 tbsp unsalted butter<br>2 tbsp honey<br>Pinch of salt<br>Chopped fresh parsley for garnish (optional)</p>",
+      "created_on": "2023-09-15T14:30:00.000Z",
+      "status": 1,
+      "excerpt": "Add a touch of sweetness to your meal with these irresistible honey glazed carrots.",
+      "updated_on": "2023-12-01T11:10:00.000Z",
+      "category": 16
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": null,
+    "fields": {
+      "title": "Greek Salad with Lemon Herb Dressing",
+      "slug": "greek-salad-lemon-herb-dressing",
+      "author": 7,
+      "featured_image": "image/upload/placeholder",
+      "content": "<p>In a small bowl, whisk together olive oil, lemon juice, minced garlic, dried oregano, salt, and black pepper to make the dressing.</p><p>In a large salad bowl, combine chopped romaine lettuce, sliced cucumber, halved cherry tomatoes, sliced red onion, crumbled feta cheese, and pitted Kalamata olives.</p><p>Drizzle the lemon herb dressing over the salad and toss gently to coat all the ingredients.</p><p>Serve immediately as a refreshing appetizer or side dish.</p>",
+      "ingredients": "<p>3 tbsp olive oil<br>2 tbsp lemon juice<br>2 cloves garlic, minced<br>1 tsp dried oregano<br>Salt and black pepper to taste<br>4 cups chopped romaine lettuce<br>1 cucumber, sliced<br>1 cup cherry tomatoes, halved<br>1/2 red onion, thinly sliced<br>1/2 cup crumbled feta cheese<br>1/4 cup pitted Kalamata olives</p>",
+      "created_on": "2023-05-25T13:45:00.000Z",
+      "status": 1,
+      "excerpt": "Enjoy the fresh and tangy flavors of this classic Greek salad with homemade lemon herb dressing.",
+      "updated_on": "2023-10-10T10:30:00.000Z",
+      "category": 4
+    }
+  } 
+
+]

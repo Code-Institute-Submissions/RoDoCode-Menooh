@@ -4,7 +4,7 @@
         integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
         crossorigin="anonymous"></script>
 
-<!-- index.html content starts here -->
+<!-- Homepage Dish Wall -->
 {% if user.is_authenticated %}
 <div class="container">
     <div class="row">
@@ -132,7 +132,8 @@
                 </div>
             </div>
             {% endif %} 
-            
+
+            <!-- inifite Scroll Mechanism -->
             {% if page_obj.has_next %}
             <span hx-get="{% url 'home' %}?page={{ page_obj.next_page_number }}" hx-swap="beforeend" hx-target=".dish_wall_container"
                 hx-select=".card" hx-trigger="revealed" style="height:0">
@@ -146,6 +147,8 @@
         <img src="{% static 'images/Infinity-1s-200px.gif' %}" style="width:20%;height:20%;" alt="loading_gif" />
     </div>
 </div>
+
+<!-- Unauthorised Visitor Welcome Board -->
 {% else %}
 <br>
 <div class="container mt-1" id="detailed_recipe_card">
@@ -192,5 +195,4 @@
 </div>
 
 {% endif %}
-<!-- index.html content ends here -->
 {% endblock %} {% block copyright %} Copyright 2024 Rory Dow {% endblock %}

@@ -11,14 +11,6 @@ from chefprofile.forms import NewCookbookForm
 import random
 from django.views.decorators.http import require_POST
 
-# Create your views here.
-
-
-# class PostList(generic.ListView):
-# queryset = Post.objects.filter(status=1)
-# template_name = "blog/index.html"
-# paginate_by = 14
-
 
 def PostList(request):
     if request.user.is_authenticated:
@@ -82,9 +74,6 @@ def post_detail(request, slug):
 
 @login_required
 def comment_edit(request, slug, comment_id):
-    """
-    view to edit comments
-    """
     if request.method == "POST":
 
         queryset = Post.objects.filter(status=1)
@@ -107,9 +96,6 @@ def comment_edit(request, slug, comment_id):
 
 @login_required
 def comment_delete(request, slug, comment_id):
-    """
-    view to delete comment
-    """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)

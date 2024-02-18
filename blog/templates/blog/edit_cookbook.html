@@ -8,9 +8,6 @@
       <p>
         Personalise it and make it perfect!
       </p>
-
-      <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
       <form method="post" enctype="multipart/form-data">
         {{ cookbook_form | crispy }} {% csrf_token %}
         <button class="btn btn-secondary btn-rounded btn-md" type="submit">Save</button>

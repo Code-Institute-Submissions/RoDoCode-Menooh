@@ -7,8 +7,6 @@ from chefprofile.models import ChefProfile
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
-
 
 class Category(models.Model):
     title = models.CharField(max_length=250)
