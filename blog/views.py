@@ -20,7 +20,10 @@ from django.views.decorators.http import require_POST
 
 
 def PostList(request):
-    cookbooks = Cookbook.objects.filter(collector=request.user)
+    if request.user.is_authenticated:
+        cookbooks = Cookbook.objects.filter(collector=request.user)
+    else:
+        cookbooks = Cookbook.objects.none()
     page_number = request.GET.get('page', 1)
     paginator = Paginator(Post.objects.filter(status=1), 18)
     page_obj = paginator.get_page(page_number)
