@@ -207,15 +207,31 @@ url 'account_logout' as logout_url %} -->
     
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg fixed-bottom">
-      <p class="m-0 text-center text-white">
-        {% block copyright %} Made by Rory Dow {% endblock copyright %}
-      </p>
-      <p class="m-0 text-center text-white">
-        Follow us: <i class="fab fa-facebook-square ms-3"></i>
-        <i class="fab fa-twitter-square ms-3"></i>
-        <i class="fab fa-instagram-square ms-3"></i>
-        <i class="fab fa-youtube-square ms-3"></i>
-      </p>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-auto">
+            <p class="m-0 text-center text-white">
+              {% block copyright %} Made by Rory Dow {% endblock copyright %}
+            </p>
+          </div>
+          <div class="col-auto">
+            <p class="m-0 text-center text-white">
+              Follow us: 
+              <a href="https://www.facebook.com/profile.php?id=100093114066543"
+              target="_blank" style="color:white;"><i class="fab fa-facebook-square ms-3"></i></a>
+
+              <a href="https://twitter.com/RoDoCode"
+              target="_blank" style="color:white;"><i class="fab fa-twitter-square ms-3"></i></a>
+
+              <a href="https://www.instagram.com/rodonicelife/"
+                target="_blank" style="color:white;"><i class="fab fa-instagram-square ms-3"></i></a>
+
+              <a href="www.youtube.com/@MrRollable"
+              target="_blank" style="color:white;"><i class="fab fa-youtube-square ms-3"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script
