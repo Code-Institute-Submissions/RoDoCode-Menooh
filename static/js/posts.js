@@ -1,13 +1,13 @@
-const submitButton = document.getElementById("submitButton");
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
+const deletePostModal = new bootstrap.Modal(document.getElementById("deletePostModal"));
+const deletePostButtons = document.getElementsByClassName("post-kill");
+const deletePostConfirm = document.getElementById("deletePostConfirm");
 
 
-for (let button of deleteButtons) {
+for (let button of deletePostButtons) {
     button.addEventListener("click", (e) => {
+        console.log("bum");
         let postId = e.target.getAttribute("post_id");
-        deletePostConfirm.href = `delete_post/${postId}`;
+        deletePostConfirm.href = `post_delete/${postId}`;
         deletePostModal.show();
     });
 }

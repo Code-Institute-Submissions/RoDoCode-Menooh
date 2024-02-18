@@ -17,7 +17,7 @@
                     {% if user.is_authenticated and post.author == user %}
                     <div class="post-save-flash" style="z-index:1000;">
                         <div class="d-inline">
-                            <button class="btn btn-delete btn-rounded btn-md" comment_id="{{ comment.id }}">
+                            <button class="btn btn-danger post-kill btn-rounded btn-md" post_id="{{ post.id }}" id="pst-btn-delete">
                                 Delete
                             </button>
                         </div>
@@ -163,7 +163,7 @@
                 <p>Posting as: {{ user.username }}</p>
                 <form id="commentForm" method="post" style="margin-top: 1.3em" enctype="multipart/form-data">
                     {{ comment_form | crispy }} {% csrf_token %}
-                    <button id="submitButton" name="post_comment" type="submit" class="btn btn-signup btn-lg">
+                    <button id="submitButton" name="post_comment" type="submit" class="btn btn-signup btn-rounded btn-md">
                         Submit
                     </button>
                 </form>
@@ -190,7 +190,7 @@
                     <button type="button" class="btn btn-secondary btn-rounded btn-md" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
+                    <a id="deleteConfirm" href="#" class="btn btn-danger btn-rounded btn-md">Delete</a>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
                     <button type="button" class="btn btn-secondary btn-rounded btn-md" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <a id="deletePostConfirm" href="#" class="btn btn-danger">Delete</a>
+                    <a id="deletePostConfirm" href="#" class="btn btn-danger btn-rounded btn-md">Delete</a>
                 </div>
             </div>
         </div>

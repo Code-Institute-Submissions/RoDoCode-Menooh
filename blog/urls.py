@@ -14,4 +14,6 @@ urlpatterns = [
         views.cookbook_delete, name='cookbook_delete'),
     path('cookbook/remove_recipe/', views.remove_recipe_from_cookbook, name='remove_recipe_from_cookbook'),
     path('posts/edit/<slug:slug>/', views.edit_post, name='edit_post'),
+    path('posts/<slug:slug>/post_delete/<int:post_id>',
+        views.post_delete, name='post_delete'),
 ]

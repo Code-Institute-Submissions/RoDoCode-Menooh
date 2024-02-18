@@ -189,3 +189,15 @@ def edit_post(request, slug):
     else:
         post_form = NewDishForm(instance=post)
     return render(request, 'blog/edit_post.html', {'post_form': post_form})
+
+
+@login_required
+def post_delete(request, slug, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    if post.author == request.user:
+        post.delete()
+        messages.add_message(request, messages.SUCCESS, 'Recipe deleted!')
+    else:
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own recipes!')
+    return HttpResponseRedirect(reverse('view_chefprofile'))
