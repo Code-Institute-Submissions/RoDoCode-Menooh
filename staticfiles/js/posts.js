@@ -6,8 +6,8 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-        let cookbookId = e.target.getAttribute("cookbook_id");
-        deleteConfirm.href = `delete_cookbook/${cookbookId}`;
-        deleteModal.show();
+        let postId = e.target.getAttribute("post_id");
+        deletePostConfirm.href = `delete_post/${postId}`;
+        deletePostModal.show();
     });
 }

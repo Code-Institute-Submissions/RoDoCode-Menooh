@@ -156,7 +156,7 @@
         </div>
     </div>
     </div>
-    <!-- Delete confirmation modal -->
+    <!-- Delete comment confirmation modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -177,8 +177,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete post confirmation modal -->
+    <div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your recipe? This action cannot be
+                    undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <a id="deletePostConfirm" href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %} {% block extras %}
 <script src="{% static 'js/comments.js' %}"></script>
+<script src="{% static 'js/posts.js' %}"></script>
 {% endblock %}
