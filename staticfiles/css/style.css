@@ -41,7 +41,6 @@ main {
 .author {
     color: white;
     margin: 4px;
-    /* text-transform: uppercase; */
     font-size: calc(1rem - 0.1vw);
 }
 
@@ -150,7 +149,6 @@ main {
 
 :root {
     --card_width: 250px;
-  /*  --row_increment: 10px; */
     --card_border_radius: 16px;
     --card_small: 22;
     --card_medium: 29;
