@@ -33,7 +33,7 @@ def PostList(request):
                 cookbook.dishes.add(post_id)
                 cookbook.save()
                 messages.add_message(request, messages.SUCCESS, 'Recipe added to cookbook!')
-                return redirect('PostList')
+                return redirect('home')
     return render(request, 'blog/index.html', {'page_obj': page_obj, 'cookbooks': cookbooks,})
 
 
