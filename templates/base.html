@@ -1,11 +1,5 @@
 {% load static %} {% url 'home' as home_url %} {% url 'about' as about_url %}
 
-<!--{%
-url 'contact' as contact_url %} {% url 'view_chefprofile' as
-view_chefprofile_url %} {% url 'edit_chefprofile' as edit_chefprofile_url %} {%
-url 'account_login' as login_url %} {% url 'account_signup' as signup_url %} {%
-url 'account_logout' as logout_url %} -->
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
   <head>
@@ -48,96 +42,93 @@ url 'account_logout' as logout_url %} -->
 
   <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"> -->
-        <div class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="max-width:2500px;">
-            <div class="row justify-content-around" style="margin-left:0; margin-right:0; width:100%;">
-                <div class="col-auto">
-                    <a class="navbar-brand" href="{% url 'home' %}">
-                        <span class="brand">
-                            <i class="fa-solid fa-bowl-food"></i>
-                            <strong> menOoh</strong>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarText"
-                    aria-controls="navbarText"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                            <li class="nav-item me-5">
-                            <a
-                                class="nav-link {% if request.path == home_url %}active{% endif %}"
-                                aria-current="page"
-                                href="{% url 'home' %}"
-                                ><strong>Home</strong></a>
-                            </li>
-                            <li class="nav-item">
-                            <a
-                                class="nav-link {% if request.path == about_url %}active{%endif%}"
-                                aria-current="page"
-                                href="{% url 'about' %}"
-                                ><strong>About</strong></a>
-                            </li>
-                            <li class="nav-item ms-5">
-                            <a
-                                class="nav-link {% if request.path == contact_url %}active{%endif%}"
-                                aria-current="page"
-                                href="{% url 'contact' %}"
-                                ><strong>Contact</strong></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                {% if user.is_authenticated %}
-                <div class="col-auto justify-content-end my-auto">
-                    <div class="d-inline me-1">
-                        <a href="{% url 'account_logout' %}"
-                        ><button type="button" class="btn btn-danger btn-rounded">
-                            Log out
-                        </button></a
-                        >
-                    </div>
-                    <div class="d-inline">
-                        <a href="{% url 'view_chefprofile' %}">
-                        {% if "placeholder" in user.chefprofile.profile_pic.url %}
-                        <img id="prof-logo" src="{% static 'images/nobody.jpg' %}" alt="placeholder image" />
-                        {% else %}
-                        <img id="prof-logo" src="{{ user.chefprofile.profile_pic.url }}" alt="profile_picture" />
-                        {% endif %}
-                        </a>
-                    </div>
-                </div>
+    <nav class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="max-width:2500px;">
+      <div class="row justify-content-around" style="margin-left:0; margin-right:0; width:100%;">
+        <div class="col-auto">
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <span class="brand">
+                <i class="fa-solid fa-bowl-food"></i>
+                <strong> menOoh</strong>
+              </span>
+            </a>
+        </div>
+        <div class="col-auto">
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          >
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item me-5">
+              <a
+                class="nav-link {% if request.path == home_url %}active{% endif %}"
+                aria-current="page"
+                href="{% url 'home' %}"
+                ><strong>Home</strong></a>
+              </li>
+              <li class="nav-item">
+              <a
+                class="nav-link {% if request.path == about_url %}active{%endif%}"
+                aria-current="page"
+                href="{% url 'about' %}"
+                ><strong>About</strong></a>
+              </li>
+              <li class="nav-item ms-5">
+              <a
+                class="nav-link {% if request.path == contact_url %}active{%endif%}"
+                aria-current="page"
+                href="{% url 'contact' %}"
+                ><strong>Contact</strong></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="col-auto justify-content-end my-auto">
+            <div class="d-inline me-1">
+                <a href="{% url 'account_logout' %}"
+                ><button type="button" class="btn btn-danger btn-rounded">
+                    Log out
+                </button></a
+                >
+            </div>
+            <div class="d-inline">
+                <a href="{% url 'view_chefprofile' %}">
+                {% if "placeholder" in user.chefprofile.profile_pic.url %}
+                <img id="prof-logo" src="{% static 'images/nobody.jpg' %}" alt="placeholder image" />
                 {% else %}
-                <div class="col-auto justify-content-end my-auto">
-                    <div class="d-inline me-1">
-                        <a href="{% url 'account_login' %}"
-                        ><button type="button" class="btn btn-danger btn-rounded">
-                            Log in
-                        </button></a
-                        >
-                    </div>
-                    <div class="d-inline">
-                        <a href="{% url 'account_signup' %}"
-                        ><button type="button" class="btn btn-success btn-rounded">
-                            Sign up
-                        </button></a
-                        >
-                    </div>
-                </div>
+                <img id="prof-logo" src="{{ user.chefprofile.profile_pic.url }}" alt="profile_picture" />
                 {% endif %}
+                </a>
             </div>
         </div>
-<!-- </nav> -->
+        {% else %}
+        <div class="col-auto justify-content-end my-auto">
+            <div class="d-inline me-1">
+                <a href="{% url 'account_login' %}"
+                ><button type="button" class="btn btn-danger btn-rounded">
+                    Log in
+                </button></a
+                >
+            </div>
+            <div class="d-inline">
+                <a href="{% url 'account_signup' %}"
+                ><button type="button" class="btn btn-success btn-rounded">
+                    Sign up
+                </button></a
+                >
+            </div>
+        </div>
+        {% endif %}
+      </div>
+    </nav>
 
     <main class="flex-shrink-0 main-bg mx-auto mb-5" id="loginmessage">
       <!-- displaying Django messages -->
