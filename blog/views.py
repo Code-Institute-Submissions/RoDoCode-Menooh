@@ -41,6 +41,7 @@ def PostList(request):
     return render(request, 'blog/index.html', {'page_obj': page_obj, 'cookbooks': cookbooks,})
 
 
+@login_required
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     cookbooks = Cookbook.objects.filter(collector=request.user)
@@ -77,6 +78,7 @@ def post_detail(request, slug):
     return render(request, 'blog/post_detail.html', context)
 
 
+@login_required
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
@@ -101,6 +103,7 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@login_required
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
@@ -119,6 +122,7 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@login_required
 def cookbook_contents(request, slug):
     cookbook = get_object_or_404(Cookbook, slug=slug)
     dishes = cookbook.dishes.all()
@@ -144,6 +148,7 @@ def edit_cookbook(request, slug):
     return render(request, 'blog/edit_cookbook.html', {'cookbook_form': cookbook_form})
 
 
+@login_required
 def cookbook_delete(request, slug, cookbook_id):
     cookbook = get_object_or_404(Cookbook, pk=cookbook_id)
     if cookbook.collector == request.user:
@@ -165,3 +170,7 @@ def remove_recipe_from_cookbook(request):
     dishes = cookbook.dishes.all()
     messages.add_message(request, messages.SUCCESS, 'Recipe removed from cookbook.')
     return render(request, 'blog/cookbook_contents.html', {'dishes': dishes, 'cookbook': cookbook})
+
+def custom_login_redirect(request):
+    messages.error(request, "Please log in to view content")
+    return redirect('blog/home')

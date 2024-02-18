@@ -13,6 +13,24 @@
                     {% else %}
                     <img id="post-image" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px; max-height:450px;"/>
                     {% endif %}
+
+                    {% if user.is_authenticated and comment.author == user %}
+                    <div class="post-save-flash">
+                        <div class="d-inline">
+                            <button class="btn btn-delete" comment_id="{{ comment.id }}">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="d-inline">
+                            <a class="mx-auto text-center justify-content-center" href="{% url 'edit_post' slug=post.slug %}">
+                                <button type="button" class="btn btn-success btn-rounded btn-md">
+                                    Edit
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+
                 </div>
                 <div class="col-6 my-auto">
                     <div class="row justify-content-center mx-2">
