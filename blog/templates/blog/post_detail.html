@@ -14,8 +14,8 @@
                     <img id="post-image" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px; max-height:450px;"/>
                     {% endif %}
 
-                    {% if user.is_authenticated and comment.author == user %}
-                    <div class="post-save-flash">
+                    {% if user.is_authenticated and post.author == user %}
+                    <div class="post-save-flash" style="z-index:1000;">
                         <div class="d-inline">
                             <button class="btn btn-delete" comment_id="{{ comment.id }}">
                                 Delete

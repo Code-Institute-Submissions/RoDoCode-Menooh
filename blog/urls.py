@@ -13,4 +13,5 @@ urlpatterns = [
     path('cookbooks/<slug:slug>/delete_cookbook/<int:cookbook_id>',
         views.cookbook_delete, name='cookbook_delete'),
     path('cookbook/remove_recipe/', views.remove_recipe_from_cookbook, name='remove_recipe_from_cookbook'),
+    path('posts/edit/<slug:slug>/', views.edit_post, name='edit_post'),
 ]

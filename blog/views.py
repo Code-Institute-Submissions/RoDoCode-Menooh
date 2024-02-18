@@ -171,6 +171,20 @@ def remove_recipe_from_cookbook(request):
     messages.add_message(request, messages.SUCCESS, 'Recipe removed from cookbook.')
     return render(request, 'blog/cookbook_contents.html', {'dishes': dishes, 'cookbook': cookbook})
 
-def custom_login_redirect(request):
-    messages.error(request, "Please log in to view content")
-    return redirect('blog/home')
+
+@login_required
+def edit_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        post_form = NewDishForm(
+            request.POST, request.FILES, instance=post)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            if 'featured_image' in request.FILES:
+                post.featured_image = request.FILES['featured_image']
+            post.save()
+            messages.add_message(request, messages.SUCCESS, 'Recipe Updated!')
+            return redirect('view_chefprofile')
+    else:
+        post_form = NewDishForm(instance=post)
+    return render(request, 'blog/edit_post.html', {'post_form': post_form})
