@@ -4,8 +4,6 @@ from cloudinary.models import CloudinaryField
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-# Create your models here.
-
 
 class ChefProfile(models.Model):
     user = models.OneToOneField(
@@ -28,10 +26,6 @@ class ChefProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Create or update the user profile
-    """
     if created:
         ChefProfile.objects.create(user=instance)
-    # Existing users: just save the profile
     instance.chefprofile.save()
