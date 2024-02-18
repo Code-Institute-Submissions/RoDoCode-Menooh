@@ -105,9 +105,9 @@ def comment_delete(request, slug, comment_id):
 
 def cookbook_contents(request, slug):
     cookbook = get_object_or_404(Cookbook, slug=slug)
-    dishes = Cookbook.dishes.objects.filter()
+    dishes = Cookbook.dishes.objects.all()
     context = { 'dishes': dishes, 'cookbook': cookbook, }
-    return render(request, 'blog/cookbook_content.html', context)
+    return render(request, 'blog/cookbook_contents.html', context)
 
 
 def cookbook_edit(request, slug, cookbook_id):
