@@ -25,8 +25,9 @@ def PostList(request):
         cookbooks = Cookbook.objects.filter(collector=request.user)
     else:
         cookbooks = Cookbook.objects.none()
+    posts = Post.objects.filter(status=1).order_by('?')
     page_number = request.GET.get('page', 1)
-    paginator = Paginator(Post.objects.filter(status=1), 18)
+    paginator = Paginator(posts, 18)
     page_obj = paginator.get_page(page_number)
     if request.method == 'POST':
         if 'save_to_cookbook' in request.POST:
