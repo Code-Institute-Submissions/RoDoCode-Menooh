@@ -234,6 +234,13 @@ main {
     background-color: #188181;
 }
 
+.post-save-flash {
+    position: absolute;
+    right: 1%;
+    top: 3%;
+    min-width: 30%;
+}
+
 .card-title {
     margin-bottom: 0 !important;
     font-size: 1rem;

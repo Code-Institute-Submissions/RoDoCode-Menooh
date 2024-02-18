@@ -20,61 +20,112 @@
                     </a>
                 </div>
             </div>
+
             <!-- Large Dish Cards -->
             {% for post in page_obj %} {%if forloop.counter|add:"2"|divisibleby:3%}
             <div class="card card_large">
                 <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top-large" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                            {% else %}
-                            <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                            {% endif %}
-                            <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
-                                <p class="author">Chef: {{ post.author }}</p>
-                            </div>
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-large" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-large" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="post-save-flash">
+                            <form method="post"  action="">
+                                <div class="d-inline">
+                                    {% csrf_token %}
+                                    <label for="cookbook"></label>
+                                    <select name="cookbook_id" id="cookbook" style="width:100px;z-index:100;">
+                                        {% for cookbook in cookbooks %}
+                                        <option value="{{ cookbook.id }}">{{ cookbook.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="d-inline">
+                                    <button type="submit" name="save_to_cookbook" value="{{ post.id }}" class="btn btn-success btn-rounded">Save</button>
+                                </div>
+                            </form>
                         </div>
+                        <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
                 </div>
             </div>
+
             <!-- Medium Dish Cards -->
             {% elif forloop.counter|add:"1"|divisibleby:3 %}
             <div class="card card_medium">
                 <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                            {% else %}
-                            <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                            {% endif %}
-                            <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
-                                <p class="author">Chef: {{ post.author }}</p>
-                            </div>
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-medium" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-medium" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="post-save-flash">
+                            <form method="post"  action="">
+                                <div class="d-inline">
+                                    {% csrf_token %}
+                                    <label for="cookbook"></label>
+                                    <select name="cookbook_id" id="cookbook" style="width:100px;z-index:100;">
+                                        {% for cookbook in cookbooks %}
+                                        <option value="{{ cookbook.id }}">{{ cookbook.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="d-inline">
+                                    <button type="submit" name="save_to_cookbook" class="btn btn-success btn-rounded">Save</button>
+                                </div>
+                            </form>
                         </div>
+                        <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>
                 </div>
             </div>
             {% else %}
+
             <!-- Small Dish Cards -->
             <div class="card card_small">
                 <div class="card-body">
-                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                        <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
-                            {% else %}
-                            <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
-                            {% endif %}
-                            <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
-                                <p class="author">Chef: {{ post.author }}</p>
-                            </div>
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top-small" src="{% static 'images/default.jpg' %}" alt="placeholder image" />
+                        {% else %}
+                        <img class="card-img-top-small" src=" {{ post.featured_image.url }}" alt="{{ post.title }}" />
+                        {% endif %}
+                        <div class="post-save-flash">
+                            <form method="post"  action="">
+                                <div class="d-inline">
+                                    {% csrf_token %}
+                                    <label for="cookbook"></label>
+                                    <select name="cookbook_id" id="cookbook" style="width:100px;z-index:100;">
+                                        {% for cookbook in cookbooks %}
+                                        <option value="{{ cookbook.id }}">{{ cookbook.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="d-inline">
+                                    <button type="submit" name="save_to_cookbook" class="btn btn-success btn-rounded">Save</button>
+                                </div>
+                            </form>
                         </div>
+                        <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
+                            <p class="author">Chef: {{ post.author }}</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                     </a>

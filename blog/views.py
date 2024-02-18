@@ -19,12 +19,22 @@ import random
 
 
 def PostList(request):
-
+    cookbooks = Cookbook.objects.filter(collector=request.user)
     page_number = request.GET.get('page', 1)
     paginator = Paginator(Post.objects.filter(status=1), 18)
     page_obj = paginator.get_page(page_number)
-
-    return render(request, 'blog/index.html', {'page_obj': page_obj})
+    if request.method == 'POST':
+        if 'save_to_cookbook' in request.POST:
+            cookbook_id = request.POST.get('cookbook_id')
+            cookbook = get_object_or_404(Cookbook, id=cookbook_id, collector=request.user)
+            post_id = request.POST.get('save_to_cookbook')
+            if post_id.isdigit():
+                post_id = int(post_id)    
+                cookbook.dishes.add(post_id)
+                cookbook.save()
+                messages.add_message(request, messages.SUCCESS, 'Recipe added to cookbook!')
+                return redirect('PostList')
+    return render(request, 'blog/index.html', {'page_obj': page_obj, 'cookbooks': cookbooks,})
 
 
 def post_detail(request, slug):
