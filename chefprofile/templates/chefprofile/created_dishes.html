@@ -26,7 +26,7 @@
                     <img class="card-img-top-small" src=" {{ post.featured_image.url }}"
                         alt="{{ post.title }}" />
                     {% endif %}
-                    <div class="image-flash">
+                    <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
                         <p class="author">Chef: {{ post.author }}</p>
                     </div>
                 </div>

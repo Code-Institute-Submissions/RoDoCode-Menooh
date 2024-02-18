@@ -64,7 +64,7 @@ def new_dish(request):
 @login_required
 def new_cookbook(request):
     if request.method == 'POST':
-        cookbook_form = NewCookbookForm(request.POST)
+        cookbook_form = NewCookbookForm(request.POST, request.FILES,)
         if cookbook_form.is_valid():
             Cookbook = cookbook_form.save(commit=False)
             Cookbook.collector = request.user
@@ -72,6 +72,8 @@ def new_cookbook(request):
             clean_string = "".join(ugly_string)
             Cookbook.slug = clean_string.casefold(
             )+str(request.user.pk)
+            if 'cover_image' in request.FILES:
+                Cookbook.cover_image = request.FILES['cover_image']
             Cookbook.save()
             messages.success(request, 'NEW COOKBOOK ADDED!')
             return redirect('view_chefprofile')

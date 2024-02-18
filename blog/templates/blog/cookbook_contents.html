@@ -62,7 +62,7 @@
                     <img class="card-img-top-small" src=" {{ post.featured_image.url }}"
                         alt="{{ post.title }}" />
                     {% endif %}
-                    <div class="image-flash">
+                    <div class="image-flash" {% if post.author.username == "menOoh-specials" %}style="background-color:#811867;"{% else %}style="color:#188181;"{% endif %}>
                         <p class="author">Chef: {{ post.author }}</p>
                     </div>
                 </div>
@@ -92,18 +92,22 @@
     </nav>
     {% endif %}
 </div>
-
-{% if user.is_authenticated and cookbook.collector == user %}
-<button class="btn btn-delete" cookbook_id="{{ cookbook.id }}">
-    Delete
-</button>
-<a class="mx-auto text-center justify-content-center" href="{% url 'edit_cookbook' slug=cookbook.slug %}">
-    <button type="button" class="btn btn-success btn-rounded btn-sm">
-        Edit Cookbook
-    </button>
-</a>
-{% endif %}
-
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4 mx-auto">
+            {% if user.is_authenticated and cookbook.collector == user %}
+            <button class="btn btn-delete btn-rounded btn-md" cookbook_id="{{ cookbook.id }}">
+                Delete Cookbook
+            </button>
+            <a class="mx-auto text-center justify-content-center" href="{% url 'edit_cookbook' slug=cookbook.slug %}">
+                <button type="button" class="btn btn-success btn-rounded btn-md">
+                    Edit Cookbook
+                </button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
