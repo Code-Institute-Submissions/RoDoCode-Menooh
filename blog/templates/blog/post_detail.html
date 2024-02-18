@@ -101,28 +101,37 @@
                 <!-- We want a for loop inside the empty control tags
                 to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div
-                    class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                    <img src="{{ comment.author.chefprofile.profile_pic.url }}" width="100px" height="100px" class="rounded-circle"
-                        alt="profile_picture" />
-                    <p class="font-weight-bold">
-                        {{ comment.author }}
-                        <span class="font-weight-normal"> {{ comment.created_on }} </span>
-                        wrote:
-                    </p>
-                    <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
+                <div class="p-2 container comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                    <div class="row justify-content-start">
+                        <div class="col-auto">
+                            <img src="{{ comment.author.chefprofile.profile_pic.url }}" width="38px" height="38px" class="rounded-circle"
+                                alt="profile_picture" />
+                        </div>
+                        <div class="col-auto">
+                            <p class="font-weight-bold text-wrap"><strong>{{ comment.author }}</strong> {{ comment.body | linebreaks }}
+                                <span class="font-weight-normal"> {{ comment.created_on }} </span>
+                            </p>
+                        </div>
+                        <div class="col-auto text-wrap">
+                        {% if not comment.approved and comment.author == user %}
+                        <div class="row">
+                            <div class="col-auto">
+                                <p class="approval">This comment is awaiting approval</p>
+                            </div>
+                        </div>
+                        {% endif %} {% if user.is_authenticated and comment.author == user %}
+                        <div class="row">
+                            <div class="col-auto">
+                                <button class="btn btn-delete" comment_id="{{ comment.id }}">
+                                    Delete
+                                </button>
+                                <button class="btn btn-edit" comment_id="{{ comment.id }}">
+                                    Edit
+                                </button>
+                            </div>
+                        </div>
+                        {% endif %}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
-                    <p class="approval">This comment is awaiting approval</p>
-                    {% endif %} {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">
-                        Delete
-                    </button>
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">
-                        Edit
-                    </button>
-                    {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
