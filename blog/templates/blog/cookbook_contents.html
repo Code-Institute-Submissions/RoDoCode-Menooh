@@ -97,9 +97,11 @@
 <button class="btn btn-delete" cookbook_id="{{ cookbook.id }}">
     Delete
 </button>
-<button class="btn btn-edit" cookbook_id="{{ cookbook.id }}">
-    Edit
-</button>
+<a class="mx-auto text-center justify-content-center" href="{% url 'edit_cookbook' slug=cookbook.slug %}">
+    <button type="button" class="btn btn-success btn-rounded btn-sm">
+        Edit Cookbook
+    </button>
+</a>
 {% endif %}
 
 <!-- Delete confirmation modal -->

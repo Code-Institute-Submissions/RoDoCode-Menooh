@@ -26,6 +26,7 @@ def edit_chefprofile(request):
     return render(request, 'chefprofile/edit_chefprofile.html', {'chef_form': chef_form})
 
 
+@login_required
 def view_chefprofile(request):
     chef_profile = ChefProfile.objects.get(user=request.user)
     chef_posts = Post.objects.filter(author=request.user)
@@ -60,6 +61,7 @@ def new_dish(request):
     return render(request, 'chefprofile/new_dish.html', {'dish_form': dish_form})
 
 
+@login_required
 def new_cookbook(request):
     if request.method == 'POST':
         cookbook_form = NewCookbookForm(request.POST)

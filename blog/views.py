@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from .models import Post, Comment, Cookbook
 from .forms import CommentForm
+from chefprofile.forms import NewCookbookForm
 import random
 
 # Create your views here.
@@ -109,7 +111,7 @@ def cookbook_contents(request, slug):
     context = { 'dishes': dishes, 'cookbook': cookbook, }
     return render(request, 'blog/cookbook_contents.html', context)
 
-
+"""
 def cookbook_edit(request, slug, cookbook_id):
     if request.method == "POST":
         cookbook = get_object_or_404(Cookbook, slug=slug)
@@ -122,6 +124,24 @@ def cookbook_edit(request, slug, cookbook_id):
             messages.add_message(request, messages.ERROR,
                                  'Error updating cookbook!')
     return HttpResponseRedirect(reverse('cookbook_content', args=[slug]))
+"""
+
+@login_required
+def edit_cookbook(request, slug):
+    cookbook = get_object_or_404(Cookbook, slug=slug)
+    if request.method == 'POST':
+        cookbook_form = NewCookbookForm(
+            request.POST, request.FILES, instance=cookbook)
+        if cookbook_form.is_valid():
+            cookbook = cookbook_form.save(commit=False)
+            if 'cover_image' in request.FILES:
+                cookbook.cover_image = request.FILES['cover_image']
+            cookbook.save()
+            messages.add_message(request, messages.SUCCESS, 'Cookbook Updated!')
+            return redirect('view_chefprofile')
+    else:
+        cookbook_form = NewCookbookForm(instance=cookbook)
+    return render(request, 'blog/edit_cookbook.html', {'cookbook_form': cookbook_form})
 
 
 def cookbook_delete(request, slug, cookbook_id):
