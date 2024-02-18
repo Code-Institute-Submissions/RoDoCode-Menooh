@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from .models import ChefProfile
 from blog.models import Post, Cookbook
 from .forms import ChefProfileForm, NewDishForm, NewCookbookForm
@@ -31,11 +32,17 @@ def view_chefprofile(request):
     chef_profile = ChefProfile.objects.get(user=request.user)
     chef_posts = Post.objects.filter(author=request.user)
     chef_cookbooks = Cookbook.objects.filter(collector=request.user)
-    paginate_by = 20
+    page1_number = request.GET.get('page1')
+    page2_number = request.GET.get('page2')
+    paginator1 = Paginator(chef_posts, 7)
+    paginator2 = Paginator(chef_cookbooks, 7)
+    page1_obj = paginator1.get_page(page1_number)
+    page2_obj = paginator2.get_page(page2_number)
     context = {
         'posts': chef_posts,
         'cookbooks': chef_cookbooks,
-        'paginate_by': paginate_by,
+        'page1_obj': page1_obj, 
+        'page2_obj': page2_obj
     }
     return render(request, 'chefprofile/view_chefprofile.html', context)
 

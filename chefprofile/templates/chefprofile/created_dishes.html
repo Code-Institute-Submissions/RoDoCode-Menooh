@@ -13,7 +13,7 @@
             </a>
         </div>
     </div>
-    {% for post in posts %}
+    {% for post in page1_obj %}
     {%if post.author == user %}
     <div class="card card_small">
         <div class="card-body">
@@ -39,23 +39,17 @@
     {% endif %}
     {% endfor %}
 </div>
-<div id="pagination-button">
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %} {% if page_obj.has_next %}
-            <li>
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-                    NEXT &raquo;</a>
-            </li>
+<nav class="row justify-content-center" aria-label="Page navigation">
+    <div class="col-auto">
+        <div class="pagination">
+            {% if page1_obj.has_previous %}
+                <a href="?page1={{ page1_obj.previous_page_number }}&page2={{ page2_obj.number }}"><button type="button" class="btn btn-warning btn-rounded btn-sm">Previous</button></a>
             {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+            {% if page1_obj.has_next %}
+                <a href="?page1={{ page1_obj.next_page_number }}&page2={{ page2_obj.number }}"><button type="button" class="btn btn-warning btn-rounded btn-sm">Next</button></a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
 
 <!-- </div>-->
