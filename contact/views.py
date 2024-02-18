@@ -5,10 +5,6 @@ from .forms import CollaborateForm
 
 
 def contact_us(request):
-    """
-    Renders the Contact page
-    """
-
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
         if collaborate_form.is_valid():
@@ -16,10 +12,8 @@ def contact_us(request):
             messages.add_message(request, messages.SUCCESS, "Collaboration \
                                  request received! I endeavour to respond \
                                  within 2 working days.")
-
     contact = Contact.objects.all().order_by('-updated_on').first()
     collaborate_form = CollaborateForm()
-
     return render(
         request,
         "contact/contact.html",
