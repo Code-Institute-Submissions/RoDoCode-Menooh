@@ -8,6 +8,7 @@ from .models import Post, Comment, Cookbook
 from .forms import CommentForm
 from chefprofile.forms import NewCookbookForm
 import random
+from django.views.decorators.http import require_POST
 
 # Create your views here.
 
@@ -121,20 +122,6 @@ def cookbook_contents(request, slug):
     context = { 'dishes': dishes, 'cookbook': cookbook, }
     return render(request, 'blog/cookbook_contents.html', context)
 
-"""
-def cookbook_edit(request, slug, cookbook_id):
-    if request.method == "POST":
-        cookbook = get_object_or_404(Cookbook, slug=slug)
-        cookbook_form = CookbookPostForm(data=request.POST, instance=cookbook)
-        if cookbook_form.is_valid() and cookbook.collector == request.user:
-            cookbook = cookbook_form.save(commit=False)
-            cookbook.save()
-            messages.add_message(request, messages.SUCCESS, 'Cookbook Updated!')
-        else:
-            messages.add_message(request, messages.ERROR,
-                                 'Error updating cookbook!')
-    return HttpResponseRedirect(reverse('cookbook_content', args=[slug]))
-"""
 
 @login_required
 def edit_cookbook(request, slug):
@@ -163,3 +150,15 @@ def cookbook_delete(request, slug, cookbook_id):
         messages.add_message(request, messages.ERROR,
                              'You can only delete your own cookbooks!')
     return HttpResponseRedirect(reverse('view_chefprofile'))
+
+
+@require_POST
+def remove_recipe_from_cookbook(request):
+    post_id = request.POST.get('post_id')
+    cookbook_slug = request.POST.get('cookbook_slug')
+    cookbook = get_object_or_404(Cookbook, slug=cookbook_slug, collector=request.user)
+    post = get_object_or_404(Post, id=post_id)
+    cookbook.dishes.remove(post)
+    dishes = cookbook.dishes.all()
+    messages.add_message(request, messages.SUCCESS, 'Recipe removed from cookbook.')
+    return render(request, 'blog/cookbook_contents.html', {'dishes': dishes, 'cookbook': cookbook})
