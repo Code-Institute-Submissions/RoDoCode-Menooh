@@ -9,9 +9,9 @@
             <div class="row">
                 <div class="image-container col-6 px-0">
                     {% if "placeholder" in cookbook.cover_image.url %}
-                    <img id="post-image" src="{% static 'images/book_cover_default.jpg' %}" alt="placeholder image" style="border-radius:50px 0 0 50px; max-height:450px;"/>
+                    <img id="cook-image" src="{% static 'images/book_cover_default.jpg' %}" alt="placeholder image" style="border-radius:50px 0 0 50px; max-height:450px;"/>
                     {% else %}
-                    <img id="post-image" src=" {{ cookbook.cover_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px; max-height:450px;"/>
+                    <img id="cook-image" src=" {{ cookbook.cover_image.url }}" alt="{{ post.title }}" style="border-radius:50px 0 0 50px; max-height:450px;"/>
                     {% endif %}
                 </div>
                 <div class="col-6 my-auto">

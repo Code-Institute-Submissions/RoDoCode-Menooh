@@ -292,6 +292,13 @@ main {
     object-fit: cover;
 }
 
+#cook-image {
+    border-radius:50px 0 0 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 #jumbotron-image {
     border-radius:50px 0 0 50px;
     width: 100%;

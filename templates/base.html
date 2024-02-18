@@ -50,7 +50,7 @@ url 'account_logout' as logout_url %} -->
     <!-- Navigation -->
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"> -->
         <div class="container navbar navbar-expand-lg navbar-light bg-white fixed-top" style="max-width:2500px;">
-            <div class="row justify-content-between" style="margin-left:0; margin-right:0; width:100%;">
+            <div class="row justify-content-around" style="margin-left:0; margin-right:0; width:100%;">
                 <div class="col-auto">
                     <a class="navbar-brand" href="{% url 'home' %}">
                         <span class="brand">
@@ -97,16 +97,7 @@ url 'account_logout' as logout_url %} -->
                         </ul>
                     </div>
                 </div>
-                {% if user.is_authenticated %}
-                <div class="col-auto mt-1">
-                    <div class="input-group" id="searchbar">
-                        <input type="search" class="form-control" id="nav-search-input" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-outline-success btn-rounded my-2 my-sm-0" type="button">Search</button>
-                        </span>
-                    </div>
-                </div>
-                {% endif %}
+                
                 {% if user.is_authenticated %}
                 <div class="col-auto justify-content-end my-auto">
                     <div class="d-inline me-1">
@@ -213,7 +204,7 @@ url 'account_logout' as logout_url %} -->
         <div class="row justify-content-between">
           <div class="col-auto">
             <p class="m-0 text-center text-white">
-              {% block copyright %} Made by Rory Dow {% endblock copyright %}
+              {% block copyright %} Made by Rory Dow {% endblock copyright %} | Images used for educational purposes
             </p>
           </div>
           <div class="col-auto">
@@ -225,10 +216,10 @@ url 'account_logout' as logout_url %} -->
               <a href="https://twitter.com/RoDoCode"
               target="_blank" style="color:white;"><i class="fab fa-twitter-square ms-3"></i></a>
 
-              <a href="https://www.instagram.com/rodonicelife/"
+              <a href="https://www.instagram.com"
                 target="_blank" style="color:white;"><i class="fab fa-instagram-square ms-3"></i></a>
 
-              <a href="www.youtube.com/@MrRollable"
+              <a href="https://www.youtube.com/@MrRollable"
               target="_blank" style="color:white;"><i class="fab fa-youtube-square ms-3"></i></a>
             </p>
           </div>
