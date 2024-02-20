@@ -145,12 +145,12 @@ The comments were tested for validity.
 The views.py for the posts detail was tested for functionality also. 
 
 ## Validator Testing 
-[JsHint](https://jshint.com/) - used for validating the javascript code<br>
-[PEP8 Validator](http://pep8online.com/) - used for validating the python code<br>
-[HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - used for validating the HTML<br>
-[CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - used for validating the CSS<br>
-[W.A.V.E.](https://wave.webaim.org/) - for testing accessibility<br>
-[LightHouse] - for testing performance<br>
+[JsHint](https://jshint.com/) - used for validating the javascript code<br>Reports[here](static/images/testing_01.png) and [here](static/images/testing_02.png)<br>
+[PEP8 Validator](http://pep8online.com/) - used for validating the python code<br><br>
+[HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - used for validating the HTML<br><br>
+[CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - used for validating the CSS<br><br>
+[W.A.V.E.](https://wave.webaim.org/) - for testing accessibility<br>Reports [here](static/images/testing_03.png)<br>
+[LightHouse] - for testing performance<br><br>
 
 ## Unfixed Bugs
 
