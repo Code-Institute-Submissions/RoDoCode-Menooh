@@ -152,7 +152,6 @@ The views.py for the posts detail was tested for functionality also.
 [W.A.V.E.](https://wave.webaim.org/) - for testing accessibility<br>
 [LightHouse] - for testing performance<br>
 
-
 ## Unfixed Bugs
 
 There are no unfixed bugs that I am aware of at this time. My aim was to have everything which is included working smoothly before submission, rather than adding lots of extra features which were not properly tested or unfinished and beyond the requirements of the prokect scope. 

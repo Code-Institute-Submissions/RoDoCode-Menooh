@@ -1,4 +1,3 @@
-const submitButton = document.getElementById("submitButton");
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");

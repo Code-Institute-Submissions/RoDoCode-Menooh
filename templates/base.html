@@ -69,21 +69,21 @@
               <li class="nav-item me-5">
               <a
                 class="nav-link {% if request.path == home_url %}active{% endif %}"
-                aria-current="page"
+                aria-current="home"
                 href="{% url 'home' %}"
                 ><strong>Home</strong></a>
               </li>
               <li class="nav-item">
               <a
                 class="nav-link {% if request.path == about_url %}active{%endif%}"
-                aria-current="page"
+                aria-current="about"
                 href="{% url 'about' %}"
                 ><strong>About</strong></a>
               </li>
               <li class="nav-item ms-5">
               <a
                 class="nav-link {% if request.path == contact_url %}active{%endif%}"
-                aria-current="page"
+                aria-current="contact"
                 href="{% url 'contact' %}"
                 ><strong>Contact</strong></a>
               </li>
@@ -94,7 +94,7 @@
         <div class="col-auto justify-content-end my-auto">
             <div class="d-inline me-1">
                 <a href="{% url 'account_logout' %}"
-                ><button type="button" class="btn btn-danger btn-rounded">
+                ><button type="button" class="btn btn-danger btn-rounded" aria-current="logout">
                     Log out
                 </button></a
                 >
@@ -113,14 +113,14 @@
         <div class="col-auto justify-content-end my-auto">
             <div class="d-inline me-1">
                 <a href="{% url 'account_login' %}"
-                ><button type="button" class="btn btn-danger btn-rounded">
+                ><button type="button" class="btn btn-danger btn-rounded" aria-current="login">
                     Log in
                 </button></a
                 >
             </div>
             <div class="d-inline">
                 <a href="{% url 'account_signup' %}"
-                ><button type="button" class="btn btn-success btn-rounded">
+                ><button type="button" class="btn btn-success btn-rounded" aria-current="signup">
                     Sign up
                 </button></a
                 >
@@ -202,16 +202,16 @@
             <p class="m-0 text-center text-white">
               Follow us: 
               <a href="https://www.facebook.com/profile.php?id=100093114066543"
-              target="_blank" style="color:white;"><i class="fab fa-facebook-square ms-3"></i></a>
+              target="_blank" style="color:white;" aria-current="facebook-link"><i class="fab fa-facebook-square ms-3"></i></a>
 
               <a href="https://twitter.com/RoDoCode"
-              target="_blank" style="color:white;"><i class="fab fa-twitter-square ms-3"></i></a>
+              target="_blank" style="color:white;" aria-current="twitter-link"><i class="fab fa-twitter-square ms-3"></i></a>
 
               <a href="https://www.instagram.com"
-                target="_blank" style="color:white;"><i class="fab fa-instagram-square ms-3"></i></a>
+                target="_blank" style="color:white;" aria-current="instagram-link"><i class="fab fa-instagram-square ms-3"></i></a>
 
               <a href="https://www.youtube.com/@MrRollable"
-              target="_blank" style="color:white;"><i class="fab fa-youtube-square ms-3"></i></a>
+              target="_blank" style="color:white;" aria-current="youtube-link"><i class="fab fa-youtube-square ms-3"></i></a>
             </p>
           </div>
         </div>
