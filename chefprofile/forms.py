@@ -4,7 +4,7 @@ from blog.models import Post, Cookbook
 
 
 class ChefProfileForm(forms.ModelForm):
-""" Chef Profile Form """
+    """ Chef Profile Form """
     class Meta:
         model = ChefProfile
         fields = ['bio', 'location', 'birth_date', 'profile_pic', 'facebook_url',
@@ -12,7 +12,7 @@ class ChefProfileForm(forms.ModelForm):
 
 
 class NewDishForm(forms.ModelForm):
-""" New Dish Form """
+    """ New Dish Form """
     class Meta:
         model = Post
         fields = ['title', 'featured_image', 'content',
@@ -20,7 +20,7 @@ class NewDishForm(forms.ModelForm):
 
 
 class NewCookbookForm(forms.ModelForm):
-""" New Cookbook Form """
+    """ New Cookbook Form """
     class Meta:
         model = Cookbook
         fields = ['title', 'cover_image', 'description', 'status', 'excerpt']

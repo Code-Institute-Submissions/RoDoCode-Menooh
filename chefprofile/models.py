@@ -6,7 +6,7 @@ from django.db.models.signals import post_save
 
 
 class ChefProfile(models.Model):
-""" Chef Profile Model """
+    """ Chef Profile Model """
     user = models.OneToOneField(User, null = True,
         on_delete = models.CASCADE, related_name = "chefprofile")
     bio = models.TextField(max_length = 500, blank = True)

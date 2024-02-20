@@ -13,7 +13,7 @@ from django.contrib.auth.models import User
 
 @login_required
 def edit_chefprofile(request):
-""" edit chefprofile view """
+    """ edit chefprofile view """
     if request.method == 'POST':
         chef_form = ChefProfileForm(
             request.POST, request.FILES, instance = request.user.chefprofile)
@@ -31,7 +31,7 @@ def edit_chefprofile(request):
 
 @login_required
 def view_chefprofile(request):
-""" view chefprofile view """
+    """ view chefprofile view """
     chef_profile = ChefProfile.objects.get(user = request.user)
     chef_posts = Post.objects.filter(author = request.user)
     chef_cookbooks = Cookbook.objects.filter(collector = request.user)
@@ -51,7 +51,7 @@ def view_chefprofile(request):
 
 @login_required
 def new_dish(request):
-""" new dish view """
+    """ new dish view """
     if request.method == 'POST':
         dish_form = NewDishForm(request.POST, request.FILES,)
         if dish_form.is_valid():
@@ -74,7 +74,7 @@ def new_dish(request):
 
 @login_required
 def new_cookbook(request):
-""" new cookbook view """
+    """ new cookbook view """
     if request.method == 'POST':
         cookbook_form = NewCookbookForm(request.POST, request.FILES,)
         if cookbook_form.is_valid():
