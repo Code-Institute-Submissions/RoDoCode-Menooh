@@ -3,8 +3,8 @@
 <hr>
 
 ## Overview
-This project is designed and developed to help users create and manage their own recipe books for cooking at home. Think Pinterest for foodies. The users are given the option to create their own recipes, add recipes from other users cookbooks, and create variants of other users recipes. Users can then forward a single recipe to a contact for the purposes of preparing that meal and purchasing ingredients. All these functionalities are available to any user with an account. <br>
-The website was created for domestic users, but there is no reason that businesses wouldnt also use it. This is a working demonstration of this site model which has the potential to be scaled to a functioning business in it's own right. <br>
+This project is designed and developed to help users create and manage their own recipe books for cooking at home. Think Pinterest for foodies. The users are given the option to create their own recipes, add recipes from other users to their own cookbook collections, furnish their own user profile, and leave comments on other recipes. All these functionalities are available to any user with an account. <br>
+The website was created for domestic users, but there is no reason that businesses wouldn't also use it. This is a working demonstration of this site model which has the potential to be scaled to a functioning business in it's own right. <br>
 **Menooh - cookbook building website** was developed using Python (Django), HTML, CSS and JavaScript by storing the data in a PostgreSQL database.
 <br><br>
 The fully deployed project can be accessed at [this link](https://menooh-49c095ee8d82.herokuapp.com/).<br><br>
@@ -105,31 +105,20 @@ The wireframes for mobile and desktop were created with [Balsamiq](https://balsa
 The project uses the PostgreSQL relational database for storing the data.<br>
 Two diagrams were made to represent the relation between the tables
 
-#### Fonts
-* The fonts I used for this site were imported from [Google Fonts](https://fonts.google.com/):<br>
-**Body:** *Tiro Devanagari Marathi, serif*<br>
-**Navbar:** *Courgette, cursive*<br>
-**Logo:** *Cinzel, serif*<br>
-**Slogan:** *Marck Script, cursive*<br>
-
-
 ## Agile Methodology
-This project was developed using the Agile methodology.<br> 
+This project was developed using the Agile methodology. User stories were central in planning steps taken. User stories were broken down into acceptance criteria and these were checked off using githubs project KanBan board functionality. These can all be seen publicly attached to this repo. Some acceptance criteria were beyond the scope of the educational project and timeline so have not been met. However they were retained to make it clear the greater goal for the project and to give context to what has already been built; compromises have been made where possible so that absolutely no core functionality for this first iteration and base version of the design have been left out.<br> 
 
 ## Features
 ### Existing Features<hr>
-#### Create 
+#### Create, Read, Update, Delete
+Creation of dishes is a simple form, these can be read on the users profile or in the main dish wall on the home page and in the detailed iew of the recipe. Updating or editing this content is simple with the instance filled form accessible from the recipe details page for the authenitcated user who created the recipe, and the same is true of the delete function for these users. 
 
-* Th<br> 
-<img src="static/media/booking2.png" width="40%"><br><br>
+Creating cookbooks is again a simple form accessible in the user profile, populating them is then done on the recipes cards or on the homepage, reading them on the profile page and then the cookbook-contents page is straightforward for the authenticated user who created the cookbook (for the moment the collections cannot be seen by other users - however the draft function is already in place). Updating the contents of the cookbook is possible from the cookbook contents page where recipes can be removed, and the name, description and cover image can be changed. Deletion of the cookbooks is done from the user profile. 
 
-#### Reviews
+Comments can be added, read, edited and deleted by the user's that create them. They must be authorised by admin for other users to read them. 
 
-#### Profiles
-The users' accounts have been created using the **django allauth** module. This way, information about the current user can be accessed from the template and displayed for confirming that the authentication was successful.<br>
-
-### Future Feature Considerations<hr>
-* Upd
+#### Chef Profiles
+The users' accounts have been created using the **django allauth** module. This way, information about the current user can be accessed from the template and displayed for the user to access the site. The chef profile model contains a bio, a profile picture, a location, birth date and socials links fields. These are displayed on the user's profile (other than the birthdate which remains private and is redundant at this stage but could be used in future for profile recovery or age restricted content). The profile can be edited easily and is accessed on the view_chefprofile page along with all the user's other content, such as their recipe's and cookbooks, for easy access and management.<br>
 
 ### Testing
 The testing
@@ -138,8 +127,10 @@ The testing
 
 ## Unfixed Bugs
 
+There are no unfixed bugs that I am aware of at this time. My aim was to have everything which is included working smoothly before submission, rather than adding lots of extra features which were not properly tested or unfinished and beyond the requirements of the prokect scope. 
+
 ## Responsive Layout and Design
-The project design has been adapted to all types of devices using Bootstrap predefined breakpoints and Chrome's DevTools to digitally test the platform across a number of devices.
+The project design has been adapted to all types of devices using Bootstrap predefined breakpoints and Chrome's DevTools to digitally test the platform across a number of devices. Three specific media queries were added to solve minor layout issues at specific breakpoints.
 
 **Tested devices:**
 
