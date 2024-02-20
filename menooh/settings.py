@@ -25,7 +25,7 @@ import cloudinary.api
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # DEBUG
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["8000-rodocode-menooh-76tlnlasn2.us2.codeanyapp.com",
                  ".herokuapp.com",
