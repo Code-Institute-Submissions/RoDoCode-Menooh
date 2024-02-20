@@ -1,5 +1,5 @@
 # Menooh - Cookbook Building Website
-<img src="static/media/responsive.png" ><br>
+<img src="static/images/menooh_01.png" ><br>
 <hr>
 
 ## Overview
@@ -107,6 +107,8 @@ Two diagrams were made to represent the relation between the tables
 
 ## Agile Methodology
 This project was developed using the Agile methodology. User stories were central in planning steps taken. User stories were broken down into acceptance criteria and these were checked off using githubs project KanBan board functionality. These can all be seen publicly attached to this repo. Some acceptance criteria were beyond the scope of the educational project and timeline so have not been met. However they were retained to make it clear the greater goal for the project and to give context to what has already been built; compromises have been made where possible so that absolutely no core functionality for this first iteration and base version of the design have been left out.<br> 
+<img src="static/images/menooh_02.png" >
+<br>
 
 ## Features
 ### Existing Features<hr>
@@ -117,6 +119,8 @@ Creating cookbooks is again a simple form accessible in the user profile, popula
 
 Comments can be added, read, edited and deleted by the user's that create them. They must be authorised by admin for other users to read them. 
 
+<img src="static/images/menooh_03.png" >
+
 #### Chef Profiles
 The users' accounts have been created using the **django allauth** module. This way, information about the current user can be accessed from the template and displayed for the user to access the site. The chef profile model contains a bio, a profile picture, a location, birth date and socials links fields. These are displayed on the user's profile (other than the birthdate which remains private and is redundant at this stage but could be used in future for profile recovery or age restricted content). The profile can be edited easily and is accessed on the view_chefprofile page along with all the user's other content, such as their recipe's and cookbooks, for easy access and management.<br>
 
@@ -125,6 +129,8 @@ The users' accounts have been created using the **django allauth** module. This 
 Each user experience function was tested thoroughly by manually logging in as a non-admin user and attempting to take the steps to create content, read content, edit content and delete content. This is true for reviews, recipes and cookbooks as well as user profiles. 
 
 The defensive programming has also been tested manually. By finding the url of a particular post, then logging out, and attempting to access this same url. The @login_required decorator on the views for post_details stops unauthorised users from accessing anything other than the index, which only shows a welcome and prompt for registering and the about and contact pages. The @login_required addition to settings allows us to set a specified redirect for any unauthorised attempt to any accepted url and view which uses this decorator. My setting simply returns the attempt to the index. 
+
+<img src="static/images/menooh_04.png" >
 
 The admin functionalities, for creating, editing, deleting, authorizing and managing all models in the database has been thoroughly tested in the making of the site. 
 
